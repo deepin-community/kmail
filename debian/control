@@ -1,0 +1,113 @@
+Source: kmail
+Section: kde
+Priority: optional
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Michael Meskes <meskes@debian.org>,
+           Norbert Preining <norbert@preining.info>,
+           Sandro Knauß <hefee@debian.org>,
+           Sune Vuorela <sune@debian.org>,
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               extra-cmake-modules (>= 5.85.0~),
+               gettext,
+               kuserfeedback-dev (>= 1.0.0~),
+               libgpgmepp-dev (>= 1.13.1~),
+               libkf5akonadi-dev (>= 4:21.08.1~),
+               libkf5akonadicontact-dev (>= 4:21.08.1~),
+               libkf5akonadimime-dev (>= 4:21.08.1~),
+               libkf5akonadisearch-dev (>= 4:21.08.1~),
+               libkf5bookmarks-dev (>= 5.85.0~),
+               libkf5calendarcore-dev (>= 5:5.85.0~),
+               libkf5calendarutils-dev (>= 4:21.08.1~),
+               libkf5codecs-dev (>= 5.71.0~),
+               libkf5config-dev (>= 5.85.0~),
+               libkf5configwidgets-dev (>= 5.85.0~),
+               libkf5contacts-dev (>= 5:5.85.0~),
+               libkf5crash-dev (>= 5.85.0~),
+               libkf5dbusaddons-dev (>= 5.85.0~),
+               libkf5doctools-dev (>= 5.85.0~),
+               libkf5grantleetheme-dev (>= 21.08.1~),
+               libkf5gravatar-dev (>= 4:21.08.1~),
+               libkf5guiaddons-dev (>= 5.85.0~),
+               libkf5i18n-dev (>= 5.85.0~),
+               libkf5iconthemes-dev (>= 5.85.0~),
+               libkf5identitymanagement-dev (>= 21.08.1~),
+               libkf5itemviews-dev (>= 5.85.0~),
+               libkf5jobwidgets-dev (>= 5.85.0~),
+               libkf5kcmutils-dev (>= 5.85.0~),
+               libkf5kio-dev (>= 5.85.0~),
+               libkf5kontactinterface-dev (>= 21.08.1~),
+               libkf5ksieve-dev (>= 4:21.08.1~),
+               libkf5ldap-dev (>= 21.08.1~),
+               libkf5libkdepim-dev (>= 4:21.08.1~),
+               libkf5libkleo-dev (>= 4:21.08.1~),
+               libkf5mailcommon-dev (>= 4:21.08.1~),
+               libkf5mailtransport-dev (>= 21.08.1~),
+               libkf5messagecomposer-dev (>= 4:21.08.1~),
+               libkf5messagecore-dev (>= 4:21.08.1~),
+               libkf5messagelist-dev (>= 4:21.08.1~),
+               libkf5messageviewer-dev (>= 4:21.08.1~),
+               libkf5mime-dev (>= 21.08.1~),
+               libkf5notifications-dev (>= 5.85.0~),
+               libkf5notifyconfig-dev (>= 5.85.0~),
+               libkf5parts-dev (>= 5.85.0~),
+               libkf5pimcommon-dev (>= 4:21.08.1~),
+               libkf5pimtextedit-dev (>= 21.08.1~),
+               libkf5service-dev (>= 5.85.0~),
+               libkf5sonnet-dev (>= 5.85.0~),
+               libkf5templateparser-dev (>= 4:21.08.1~),
+               libkf5textwidgets-dev (>= 5.85.0~),
+               libkf5tnef-dev (>= 4:21.08.1~),
+               libkf5webengineviewer-dev (>= 4:21.08.1~),
+               libkf5widgetsaddons-dev (>= 5.85.0~),
+               libkf5windowsystem-dev (>= 5.85.0~),
+               libkf5xmlgui-dev (>= 5.85.0~),
+               pkg-config,
+               pkg-kde-tools (>= 0.12),
+               qt5keychain-dev,
+               qtbase5-dev (>= 5.15.0~),
+               qtwebengine5-dev (>= 5.15.0~),
+Standards-Version: 4.6.0
+Homepage: https://invent.kde.org/pim/kmail
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/kde/kmail
+Vcs-Git: https://salsa.debian.org/qt-kde-team/kde/kmail.git
+Rules-Requires-Root: no
+
+Package: kdepim-doc
+Section: oldlibs
+Architecture: all
+Depends: kmail, ${misc:Depends}
+Description: transitional package for kmail
+ This is a transitional package, to migrate kdepim-doc to kmail.
+ .
+ It can safely be removed after the upgrade.
+
+Package: kmail
+Section: mail
+Architecture: any
+Depends: akonadi-server (>= 4:17.08~),
+         kdepim-runtime (>= 4:17.08~),
+         libkf5akonadisearch-bin (>= 4:17.08~),
+         libkf5akonadisearch-plugins (>= 4:17.08~),
+         libkf5grantleetheme-plugins (>= 17.08~),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Recommends: accountwizard,
+            gnupg,
+            kdepim-addons,
+            kdepim-themeeditors,
+            mbox-importer,
+            pim-data-exporter,
+            pim-sieve-editor,
+            pinentry-qt | pinentry-x11,
+Suggests: clamav,
+          kaddressbook,
+          kleopatra,
+          procmail,
+          spamassassin | bogofilter | spambayes (>= 1.0.4-6) | bsfilter | crm114,
+Provides: imap-client, mail-reader
+Homepage: http://kontact.kde.org/kmail/
+Description: full featured graphical email client
+ KMail supports multiple accounts, mail filtering and email encryption.
+ The program let you configure your workflow and it has good integration into
+ KDE (Plasma Desktop) but is also useable with other Desktop Environments.

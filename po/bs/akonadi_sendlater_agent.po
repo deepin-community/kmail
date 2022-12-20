@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: okular\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-05-21 00:17+0000\n"
+"PO-Revision-Date: 2013-11-09 20:08+0000\n"
+"Last-Translator: Nermina Agović <nagovic1@etf.unsa.ba>\n"
+"Language-Team: Bosanski <lokal@lugbih.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Launchpad (build 17341)\n"
+"X-Launchpad-Export-Date: 2015-02-15 06:21+0000\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: sendlaterconfiguredialog.cpp:29
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgctxt "@title:window"
+msgid "Configure"
+msgstr "Konfiguriši"
+
+#: sendlaterconfiguredialog.cpp:47
+#, kde-format
+msgid "Send Later Agent"
+msgstr "Agent za kasnije slanje"
+
+#: sendlaterconfiguredialog.cpp:49
+#, kde-format
+msgid "Send emails later agent."
+msgstr "Agent za kasnije slanje pošte."
+
+#: sendlaterconfiguredialog.cpp:51
+#, fuzzy, kde-format
+msgid "Copyright (C) 2013-2021 Laurent Montel"
+msgstr "Copyright (C) 2013 Laurent Montel"
+
+#: sendlaterconfiguredialog.cpp:53
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: sendlaterconfiguredialog.cpp:53
+#, kde-format
+msgid "Maintainer"
+msgstr "Održava"
+
+#: sendlaterconfiguredialog.cpp:56
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Samir Ribić,Lejla Bajgoric,Nermina Agović"
+
+#: sendlaterconfiguredialog.cpp:56
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Samir.ribic@etf.unsa.ba,lbajgoric1@etf.unsa.ba,nagovic1@etf.unsa.ba"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "To"
+msgstr "Prima"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Subject"
+msgstr "Naslov"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Send around"
+msgstr "Poslano oko"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Recurrent"
+msgstr "Ponavljajući"
+
+#: sendlaterconfigurewidget.cpp:58
+#, kde-format
+msgid "Message Id"
+msgstr "ID poruke"
+
+#: sendlaterconfigurewidget.cpp:69
+#, kde-format
+msgid "No messages waiting..."
+msgstr "Nema poruka na čekanju..."
+
+#: sendlaterconfigurewidget.cpp:92
+#, kde-format
+msgid "Send now"
+msgstr "Šalji sada"
+
+#: sendlaterconfigurewidget.cpp:95
+#, kde-format
+msgid "Delete"
+msgstr "Obriši"
+
+#: sendlaterconfigurewidget.cpp:156
+#, kde-format
+msgid "Yes"
+msgstr "Da"
+
+#: sendlaterconfigurewidget.cpp:156
+#, kde-format
+msgid "No"
+msgstr "Ne"
+
+#: sendlaterconfigurewidget.cpp:201
+#, fuzzy, kde-format
+#| msgid "Do you want to delete selected items? Do you want to continue?"
+msgid "Do you want to delete the selected item?"
+msgid_plural "Do you want to delete the selected items?"
+msgstr[0] "Želite li obrisati odabrane objekte? Želite li nastaviti?"
+msgstr[1] "Želite li obrisati odabrane objekte? Želite li nastaviti?"
+msgstr[2] "Želite li obrisati odabrane objekte? Želite li nastaviti?"
+
+#: sendlaterconfigurewidget.cpp:202
+#, kde-format
+msgid "Remove items"
+msgstr "Ukloni objekte"
+
+#: sendlaterconfigurewidget.cpp:208
+#, fuzzy, kde-format
+#| msgid "Do you want to remove messages as well?"
+msgid "Do you want to remove the messages as well?"
+msgstr "Da li želiš ukloniti i ovu poruku?"
+
+#: sendlaterconfigurewidget.cpp:208
+#, kde-format
+msgid "Remove messages"
+msgstr "Ukloni poruke"
+
+#: sendlaterjob.cpp:55 sendlaterjob.cpp:58
+#, kde-format
+msgid "Not message found."
+msgstr "Nema nađene poruke."
+
+#: sendlaterjob.cpp:66
+#, fuzzy, kde-format
+msgid "No message found."
+msgstr "Nema nađene poruke."
+
+#: sendlaterjob.cpp:75
+#, kde-format
+msgid "Error during fetching message."
+msgstr "Greška pri dobavljanju poruke."
+
+#: sendlaterjob.cpp:81
+#, kde-format
+msgid "Cannot fetch message. %1"
+msgstr "Ne može donijeti poruku. %1"
+
+#: sendlaterjob.cpp:86
+#, kde-format
+msgid "We can't create transport"
+msgstr "Ne možemo formirati transport"
+
+#: sendlaterjob.cpp:93
+#, kde-format
+msgid "Message is not a real message"
+msgstr "Poruka nije realna poruka"
+
+#: sendlaterjob.cpp:100
+#, kde-format
+msgid "Cannot send message."
+msgstr "Nemoguće poslati poruku."
+
+#: sendlaterjob.cpp:131
+#, kde-format
+msgid "Message sent"
+msgstr "Poruka poslana"
+
+#: sendlatermanager.cpp:190
+#, kde-format
+msgid "An error was found. Do you want to resend it?"
+msgstr "Nađena greška. Želite li ponovo poslati?"
+
+#: sendlatermanager.cpp:190
+#, kde-format
+msgid "Error found"
+msgstr "Nađena greška"
+
+#. i18n: ectx: property (text), widget (QPushButton, modifyItem)
+#: ui/sendlaterconfigurewidget.ui:31
+#, kde-format
+msgid "Modify..."
+msgstr "Izmijeni..."
+
+#. i18n: ectx: property (text), widget (QPushButton, removeItem)
+#: ui/sendlaterconfigurewidget.ui:38
+#, kde-format
+msgid "Remove"
+msgstr "Ukloni"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Send Later"
+#~ msgstr "Pošalji kasnije"
+
+#~ msgid "Send Later"
+#~ msgstr "Pošalji kasnije"
+
+#~ msgid "Delay"
+#~ msgstr "Odgoda"
+
+#~ msgid "Days"
+#~ msgstr "Dani"
+
+#~ msgid "Weeks"
+#~ msgstr "Sedmice"
+
+#~ msgid "Months"
+#~ msgstr "Mjeseci"
+
+#~ msgid "Years"
+#~ msgstr "Godine"
+
+#~ msgid "You cannot select a date prior to the current date."
+#~ msgstr "Ne možete izabrati datum prije tekućeg datuma."
+
+#~ msgid "Send at:"
+#~ msgstr "Poslano na:"
+
+#~ msgid "Repeat every:"
+#~ msgstr "Ponovi svakih:"

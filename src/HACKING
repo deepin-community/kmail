@@ -1,0 +1,139 @@
+Getting Involved
+================
+
+If you want to code on KMail - don't be shy, just start hacking and send in patches!
+
+See the "Committing" section on how to send patches.
+
+Some starting points are:
+
+General information about contributing to KDE:
+https://community.kde.org/Get_Involved
+
+Building KDE:
+https://community.kde.org/Guidelines_and_HOWTOs/Build_from_source
+To hack on KMail, you'll first need to set up a build environment, which is described here.
+
+Generally, you just need to set up your build environment, modify the code and then send patches.
+The best thing is probably to scratch an itch of yours, e.g. fixing a bug that is annoying you
+or writing a feature that you are interested in. Have a look at bugs.kde.org to see the current
+KMail bugs and wishes (although some entries on the bug tracker are outdated). For working on KMail,
+some C++ knowledge is required. Qt, KDE and KMail knowledge can probably be picked up by reading
+code on experimenting with it (and by reading the documentation, of course!).
+
+Communication
+=============
+
+If you need help, have questions or patches, come to the #kontact IRC channel or write to the
+KDE PIM mailinglist, see https://mail.kde.org/mailman/listinfo/kde-pim. If you write to the
+mailinglist without being subscribed to it, say so in your mail so subscribers know to CC you in
+their reply. You can also write to the maintainer directly. No questions are too stupid to
+ask, but make sure you read some of the pages linked from this document.
+
+Documentation
+=============
+
+The auto-generated KDE PIM documentation can be found at https://api.kde.org/kdepim/index.html. The
+Note that many classes are not documented or the documentation is outdated. You'll have to read the
+code in order to understand it in those cases.
+
+See https://community.kde.org for many other KDE related developer documentation and tutorials.
+
+Some related RFCs are (see http://www.faqs.org/rfcs/):
+RFC4155 - The application/mbox Media Type
+RFC2822 - Internet Message Format
+RFC2045-2049 - Multipurpose Internet Mail Extensions (MIME)
+RFC2183 - Communicating Presentation Information in Internet Messages
+RFC2231 - MIME Parameter Value and Encoded Word Extensions: Character Sets, Languages, and
+            Continuations
+RFC1847 - Security Multiparts for MIME: Multipart/Signed and Multipart/Encrypted
+RFC2633 - S/MIME Version 3 Message Specification
+RFC3156 - MIME Security with OpenPGP
+RFC2298 - An Extensible Message Format for Message Disposition Notifications
+RFC2557 - MIME Encapsulation of Aggregate Documents, such as HTML (MHTML)
+RFC1939 - Post Office Protocol (POP) - Version 3
+RFC1734 - POP3 AUTHentication command
+RFC2449 - POP3 Extension Mechanism
+RFC2821 - Simple Mail Transfer Protocol (SMTP)
+RFC1869 - SMTP Service Extensions
+RFC1870 - SMTP Service Extension for Message Size Declaration
+RFC2554 - SMTP Service Extension for Authentication
+RFC2920 - SMTP Service Extension for Command Pipelining
+RFC3501 - Internet Message Access Protocol (IMAP) - VERSION 4rev1
+
+The above list is incomplete. Some of those technologies are implemented in KDE PIM libraries, not
+in KMail itself.
+
+Branches
+========
+
+KMail has several branches in the following locations:
+
+1. master
+This is where the main development takes place. It will be released together with the next major
+release of KDE Applications. New features should always be committed against this branch.
+
+2. the stable branch for KDE Applications (e.g. 17.08.x)
+Important bugfixes should be committed against this stable branch, and subsequently merged into
+the master branch. The fix can then be released together with the next minor version of KDE
+Applications (e.g. 17.08.{x+1}).
+
+Committing
+==========
+
+Before you commit (or send a patch)
+- Make sure it compiles
+- Review the output of svn diff to avoid committing unwanted changes
+- Test your changes
+- Make sure the coding style is correct
+
+To select the correct branch, see the Branches section above.
+
+If you don't have commit access, add the patch (output of git diff) for the KMail repository at
+https://phabricator.kde.org/differential/ and add the KDE PIM group as reviewer.
+
+Larger changes, for example new features, should be reviewed first, even if you have commit access.
+
+Follow the other KDE polices in https://community.kde.org/Policies/Commit_Policy.
+
+If ever any argument or conflict should arise over a commit, the following applies (taken from the
+old COMMITPOLICY document):
+"In the result of a conflict over a commit to the KMail section of KDE SVN
+ a resolution to this conflict, that is the decision to keep or revert the
+ commit can be decided by a unanimous agreement of the maintainers, or
+ failing that a resolution to the conflict will be decided by a vote of KMail
+ core developers."
+
+Coding Style and other polices
+==============================
+
+KMail is more than 10 years old, and has inconsistent coding style in many places. However, new code
+should obey to the standard KMail coding style, to keep things as consistent as possible.
+
+Please don't mix commits that change the coding style of existing code to the standard coding style
+with other changes. So when committing coding style fixes, the commit should not change anything
+else. You can use the SVN_SILENT keyword then.
+
+KMail follows the KDE coding style (https://techbase.kde.org/Policies/Frameworks_Coding_Style) with
+some exceptions, mentioned below. Note that most of the rest of KDE PIM also follows the KMail
+style. You should also read the coding style document for Kontact, which can be found at
+https://cgit.kde.org/kontact.git/tree/HACKING. All of it also applies to KMail.
+
+Please don't argue against this style, we're stuck with that anyway (changing the style to something
+else would mess up the svn annotate function)
+
+Other things to keep in mind:
+
+- No #defines, except for include guards or conditional compiling.
+  Use real constants, inline functions and template functions instead.
+
+- Don't use the "KM" prefix for new classes anymore, put the class into the "KMail" namespace
+  instead.
+
+- New files must have a license header.
+
+- Use KConfigXT for new global settings (see kmail.kcfg) whenever possible.
+
+- When changing the way config data is stored, you need to make sure older config files can still be
+  read. For this, write a kconfig update script, see the kconf_update directory for examples. See
+  https://techbase.kde.org/Development/Tools/Using_kconf_update for more documentation on this.

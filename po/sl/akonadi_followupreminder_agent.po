@@ -1,0 +1,123 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kmail package.
+#
+# Andrej Mernik <andrejm@ubuntu.si>, 2014, 2015, 2016, 2017, 2018.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-03-24 02:26+0100\n"
+"PO-Revision-Date: 2021-07-07 09:10+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 3.0\n"
+
+#: followupreminderinfoconfigwidget.cpp:25
+#, kde-format
+msgid "Follow Up Reminder Agent"
+msgstr "Opomnik za spremljano pošto"
+
+#: followupreminderinfoconfigwidget.cpp:27
+#, kde-format
+msgid "Follow Up Reminder"
+msgstr "Opomnik za spremljano pošto"
+
+#: followupreminderinfoconfigwidget.cpp:29
+#, kde-format
+msgid "Copyright (C) 2014-2021 Laurent Montel"
+msgstr "Copyright (C) 2014-2021 Laurent Montel"
+
+#: followupreminderinfoconfigwidget.cpp:31
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: followupreminderinfoconfigwidget.cpp:31
+#, kde-format
+msgid "Maintainer"
+msgstr "Vzdrževalec"
+
+#: followupreminderinfoconfigwidget.cpp:33
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrej Mernik,Matjaž Jeran"
+
+#: followupreminderinfoconfigwidget.cpp:33
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrejm@ubuntu.si,matjaz.jeran@amis.net"
+
+#: followupreminderinfowidget.cpp:60
+#, kde-format
+msgid "To"
+msgstr "Za"
+
+#: followupreminderinfowidget.cpp:60
+#, kde-format
+msgid "Subject"
+msgstr "Zadeva"
+
+#: followupreminderinfowidget.cpp:60
+#, kde-format
+msgid "Dead Line"
+msgstr "Skrajni rok"
+
+#: followupreminderinfowidget.cpp:60
+#, kde-format
+msgid "Answer"
+msgstr "Odgovor"
+
+#: followupreminderinfowidget.cpp:124
+#, kde-format
+msgid "Received"
+msgstr "Prejeto"
+
+#: followupreminderinfowidget.cpp:124
+#, kde-format
+msgid "On hold"
+msgstr "Zadržano"
+
+#: followupreminderinfowidget.cpp:181
+#, kde-format
+msgid "Show Message"
+msgstr "Pokaži sporočilo"
+
+#: followupreminderinfowidget.cpp:185 followupreminderinfowidget.cpp:212
+#, kde-format
+msgid "Delete"
+msgstr "Izbriši"
+
+#: followupreminderinfowidget.cpp:211
+#, kde-format
+msgid "Do you want to remove this selected item?"
+msgid_plural "Do you want to remove these %1 selected items?"
+msgstr[0] "Ali želite odstraniti ta %1 izbran predmet?"
+msgstr[1] "Ali želite odstraniti ta %1 izbrana predmeta?"
+msgstr[2] "Ali želite odstraniti te %1 izbrane predmete?"
+msgstr[3] "Ali želite odstraniti teh %1 izbranih predmetov?"
+
+#: followupremindermanager.cpp:156
+#, kde-format
+msgid "Answer from %1 received"
+msgstr "Prejet odgovor od %1"
+
+#: followupremindernoanswerdialog.cpp:34
+#, kde-format
+msgctxt "@title:window"
+msgid "Follow Up Reminder"
+msgstr "Opomnik za spremljanje pošte"
+
+#: followupremindernoanswerdialog.cpp:40
+#, kde-format
+msgid "You still wait an answer about this mail:"
+msgstr "Še vedno čakate na odgovor te e-pošte:"

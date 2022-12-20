@@ -1,0 +1,6 @@
+# private library
+kmail: package-name-doesnt-match-sonames libkmailprivate5
+# private library
+kmail: no-symbols-control-file
+# akonadi agent, not something to be run manually by the user
+kmail: no-manual-page usr/bin/akonadi_*_agent

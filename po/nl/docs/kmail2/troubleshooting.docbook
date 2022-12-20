@@ -1,0 +1,540 @@
+<chapter id="troubleshooting">
+
+<chapterinfo>
+<authorgroup>
+<author>
+<personname
+><firstname
+>Dit hoofdstuk is geconverteerd uit de KDE UserBase pagina <ulink url="https://userbase.kde.org/Special:MyLanguage/KMail/FAQs_Hints_and_Tips"
+>KMail/FAQs Hints and Tips</ulink
+>.</firstname
+> <surname
+></surname
+> </personname>
+      </author>
+&Freek.de.Kruijf; 
+      </authorgroup>
+<date
+>2012-07-28</date>
+      <releaseinfo
+>&kde; SC 4.9</releaseinfo>
+</chapterinfo>
+
+<title
+>&kmail; probleemoplossing</title>
+
+<sect1 id="kmail2-doesnt-send-mail"
+><title
+>KMail verzend geen e-mail</title>
+<para
+>Sommige gebruikers ondervinden dat e-mail niet naar buiten gaat en het lijkt er op dat &SMTP; ontbreekt, hoewel de pagina <guilabel
+>Instellingen</guilabel
+> juist lijkt. Er is gerapporteerd dat dit opgelost kan worden door het openen van <application
+>akonadiconsole</application
+> en toevoegen van Agent voor het verzenden van e-mail. </para>
+<para
+>Als de computer plotseling uitgeschakeld is in modus onderbroken (&eg; door een energiestoring) dan blijven e-mails eenvoudig in het Postvak uit zonder te worden verzonden, maar ook zonder dat er een foutboodschap is gegeneerd. Dit kan het gevolg zijn van het feit dat de E-mail verspreidingsagent <quote
+>offline</quote
+> is gezet in het instellingenbestand bij het onderbreken en niet is terug veranderd vanwege de crash. Bewerk het volgende bestand: </para>
+<para
+><filename
+>~/.config/akonadi/agent_config_akonadi_maildispatcher_agent</filename>
+</para>
+<para
+>en wijzig </para>
+<para
+><screen
+>[Agent]
+Online=false</screen>
+</para>
+<para
+>in </para>
+<para
+><screen
+>[Agent]
+Online=true</screen>
+</para>
+</sect1>
+<sect1 id="clean-start-after-a-failed-migration"
+><title
+>Schone start na een mislukte migratie</title>
+<para
+>In het geval dat de migratie van &kmail; 1 naar &kmail; 2 mislukt of u hebt nadien vreemde problemen, dan kunt u een schone import van uw gegevens, in plaats van de bestaande instellingen te migreren. Wees gewaarschuwd, dat vereist meer handmatige instellingen, doe dat dus alleen als u zelfverzekerd bent bij het opnieuw instellen van uw &kmail;-accounts en het kan een grote hoeveelheid netwerkverkeer genereren voor &IMAP;-hulpbronnen. </para>
+<orderedlist>
+<listitem
+><para
+>Stop Akonadi en gerelateerde toepassingen</para>
+<para
+>sluit &kmail;/&kontact;/&korganizer; af en geef dit commando: </para>
+<para
+><userinput
+><command
+>akonadictl stop</command
+></userinput>
+</para>
+<para
+>Ga na dat er geen <application
+>Akonadi</application
+> of <application
+>MySQL</application
+> proces neer actief is: </para>
+<para
+><userinput
+><command
+>ps ux | grep mysql</command
+></userinput>
+</para>
+<para
+><userinput
+><command
+>ps ux | grep akonadi</command
+></userinput>
+</para>
+<para
+>Er zou niets anders te zien moeten zijn dan het <application
+>grep</application
+>-proces zelf. </para>
+</listitem>
+<listitem
+><para
+>Verwijder oude database en configuratie van Akonadi</para>
+<para
+>Verwijder de volgende mappen </para>
+<itemizedlist>
+  <listitem>
+    <para>
+      <filename role="directory"
+>~/.local/share/akonadi</filename>
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      <filename role="directory"
+>~/.config/akonadi</filename>
+    </para>
+  </listitem>
+</itemizedlist>
+<para
+>Verwijder ook de bestanden die beginnen met <emphasis
+>akonadi</emphasis
+> uit <filename role="directory"
+>~/.kde4/share/config</filename
+> </para>
+</listitem>
+<listitem>
+<para
+>Akonadi server herstarten </para>
+<para
+><userinput
+><command
+>akonadictl start</command
+></userinput>
+</para>
+</listitem>
+<listitem>
+<para
+>Voeg de accounts terug toe </para>
+<para
+>Nu is het tijd om uw account terug toe te voegen. U kunt &kmail; (&kontact;) hiervoor gebruiken of u kunt het  hulpmiddel <application
+>akonadiconsole</application
+> gebruiken. </para>
+<para
+>In &kmail;: <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guisubmenu
+>KMail instellen</guisubmenu
+><guimenuitem
+>Accounts</guimenuitem
+></menuchoice
+> en gebruik <guilabel
+>Toevoegen</guilabel
+>. </para>
+<para
+>Als u &IMAP; gebruikt, voegt u een nieuwe <guimenuitem
+>&IMAP; e-mailserver</guimenuitem
+> toe. Als u de modus niet-verbonden gebruikt (zodat u de e-mails offline kunt lezen), schakel dit dan in in het tabblad <guilabel
+>Geavanceerd</guilabel
+>. Ga na dat u ingeschreven bent op alle belangrijke mappen. </para>
+<para
+>U ziet mogelijk dat u al een hulpbron <guilabel
+>Lokale map</guilabel
+>. Deze wijst naar een lokale maildir-map. U kunt deze ofwel wijzigen om wijzen naar uw bestaande maildir-mappen of u kunt een nieuwe hulpbron toevoegen voor lokale e-mails. </para>
+<para
+>Bij het toevoegen van een maildir-hulpbron kunt u kiezen tussen <guilabel
+>&kmail; e-mailmap</guilabel
+> of <guilabel
+>Maildir</guilabel
+>. Tenzij u een gemengde map hebt met <emphasis
+>beide</emphasis
+> maildir-mappen en mbox-bestanden, zou u <guilabel
+>Maildir</guilabel
+> moeten kiezen. Voor onafhankelijke mbox-bestanden, zoals die in <filename role="directory"
+>/var/spool/mail</filename
+>, kunt u een nieuwe <emphasis
+>MBox</emphasis
+>-map instellen. </para>
+<para
+>Voeg ook de POP3-accounts toe. Als u meerdere Lokale mappen hebt ingesteld, kiest u in het tabblad <guilabel
+>Geavanceerd</guilabel
+> de bestemmingsmap waar de nieuw gedownloade e-mails naar toe moeten. </para>
+<para
+>Stel voor alle accounts het e-mailcontrole-interval in. Voor Lokale mappen schakelt u de intervalcontrole uit en ook <guilabel
+>Meenemen in handmatige berichtencontrole</guilabel
+> in de <guilabel
+>Opties voor ophalen</guilabel
+>. </para>
+<para
+>Voeg de verzendende (SMTP) accounts toe. </para>
+</listitem>
+<listitem>
+<para
+>Repareer uw filters, identiteiten en favoriete mappen </para>
+<para
+>Als u filtering aan de kant van de client hebt (normaal met POP3-e-mails), dan gaat u naar <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guimenuitem
+>Filters instellen</guimenuitem
+></menuchoice
+> en repareert u de bestemmingsmap voor de filters, ze zijn zeer waarschijnlijk fout. Anders komen e-mails in mappen waar u ze niet verwacht. </para>
+<para
+>Spamfilter (tenminste in versie 4.7.3 en eerder) werkt niet zoals verwacht in zoverre dat de regel die de assistent aanmaakt spam niet naar de map zendt die u hebt gedefinieerd. </para>
+<para
+>De omweg hiervoor is het wijzigen van de <quote
+>spam</quote
+> en <quote
+>spam unsure</quote
+> (als het spamfilter dat u gebruikt dat ondersteunt) van kijken naar de Status-velden in de kop <literal
+>X-Spam-Status</literal
+> naar <guimenuitem
+>Overal in berichtkoppen</guimenuitem
+> kijken naar X-<replaceable
+>uw spamfilter</replaceable
+>-Classification: <quote
+>SPAM of unsure</quote
+>. Kijk naar de filters die de assistent aanmaakt en kopieer het deel <quote
+>contains</quote
+>. Voorbeeld voor <application
+>Spambayes</application
+>: <quote
+>X-Spambayes-Classification: spam</quote
+> en <quote
+>X-Spambayes-Classification: unsure</quote
+>. </para>
+<para
+>U moet ook de instellingen voor de identiteit controleren en de mappen verzonden-e-mail, concepten en sjablonen laten wijzen naar de juiste mappen. Dat doet u met <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guisubmenu
+>KMail instellen</guisubmenu
+><guimenuitem
+>Identiteiten</guimenuitem
+></menuchoice
+>, wijzig de identiteit, ga naar het tabblad <guilabel
+>Geavanceerd</guilabel
+> en wijzig de bovengenoemde instellingen voor de mappen. </para>
+<para
+>Controleer ook dat uw <guilabel
+>Favoriete mappen</guilabel
+> diegene zijn die u eerder hebt gekozen. </para>
+</listitem>
+<listitem>
+<para
+>Doe een controle van uw e-mail </para>
+<para
+>Doe een controle van uw e-mail voor uw accounts. Aanbevolen is dat te doen per account. </para>
+<para
+>Doe het als eerste voor &IMAP;, als u die hebt. </para>
+<para
+>Het volgende is om uw lokale e-mails op te halen (importeren). Een manier om dat te doen is met een volledige controle in één gang <menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>E-mail ophalen vanaf</guimenuitem
+></menuchoice
+> en selecteer het lokale account, het andere is om een voor een op de mappen te klikken, die het ophalen voor die map start (alternatief, klik rechts op de naam van de map en selecteer <guilabel
+>Map bijwerken</guilabel
+>). </para>
+<para
+>Het initiële importeren kan langzaam zijn en kan veel geheugen vragen, speciaal wanneer u mappen hebt met een grote hoeveelheid e-mail. In dat geval heeft het per map ophalen de voorkeur. Als het ophalen (alles of voor een map) klaar is en het geheugengebruik nog steeds hoog, dan zou u de Akonadi-server opnieuw kunnen starten &mdash; zie boven &mdash; of allen de maildir-agent, als u <varname
+>akonadiconsole</varname
+>gebruikt. Maak u geen zorgen, dit hoge geheugengebruik is er <emphasis
+>alleen</emphasis
+> bij het initieel importeren. </para>
+<para
+>Doe een controle van uw POP3 hulpbronnen. </para>
+</listitem>
+</orderedlist>
+<para
+>Het is te hopen dat u na deze stappen een veel betere ervaring hebt met &kmail;. </para>
+</sect1>
+
+<sect1 id="local-folders-is-added-over-and-over"
+><title
+>Lokale mappen wordt telkens toegevoegd</title>
+<para
+>In sommige gevallen kunt u uitkomen op een maildir-account verwijzend naar een zekere plaats (zoals <filename
+>$HOME/Mail</filename
+>), maar u ziet nog steeds de map <guilabel
+>Locale mappen</guilabel
+> in de lijst met mappen met submappen Postvak in/Postvak uit/Prullenbak/Concepten/&etc; en &kmail; blijft e-mails daar in stoppen, speciaal verzonden e-mails. </para>
+<para
+>Het probleem is dat bepaalde mappen gemarkeerd zijn als speciale mappen (systeemmappen) en als u ze niet hebt, dan kan &kmail; niet juist werken. Dat is de reden waarom die map telkens opnieuw wordt aangemaakt. </para>
+<para
+>Op dit moment is er geen gemakkelijke manier om dit in de UI voor alle typen speciale mappen te wijzigen. Dit is wat u kunt doen: </para>
+<orderedlist>
+<listitem
+><para
+>De mappen <emphasis
+>Verzonden, Concepten en Sjablonen</emphasis
+> zijn voor elke identiteit in te stellen. Ga naar <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guisubmenu
+>KMail instellen</guisubmenu
+><guimenuitem
+>Identiteiten</guimenuitem
+></menuchoice
+>, selecteer uw identiteit, klik op <guilabel
+>Wijzigen</guilabel
+>, ga naar het tabblad <guilabel
+>Geavanceerd</guilabel
+> stel de mappen in door ze naar de juiste plaats te laten verwijzen.</para
+></listitem>
+<listitem
+><para
+>De standaard <emphasis
+>Postvak in</emphasis
+> is voor elk POP3-account in te stellen. Ga naar <menuchoice
+><guimenu
+>Instellingen</guimenu
+><guisubmenu
+>KMail instellen</guisubmenu
+><guimenuitem
+>Account</guimenuitem
+></menuchoice
+>, selecteer uw POP3-account, klik op <guilabel
+>Wijzigen</guilabel
+> ga naar het tabblad <guilabel
+>Geavanceerd</guilabel
+> en stel de <guilabel
+>Bestemmingsmap</guilabel
+> in.</para
+></listitem>
+<listitem
+><para
+>Voor IMAP-accounts kunt u de map <emphasis
+>Prullenbak</emphasis
+> instellen. Zie boven. De naam van de instelling is <emphasis
+>Map Prullenbak</emphasis
+>.</para
+></listitem>
+<listitem
+><para
+>Het onderdeel met de meeste problemen is <emphasis
+>Postvak uit</emphasis
+>. Lokaliseer als eerste het bestand <filename
+>specialmailcollectionsrc</filename
+> in de map voor uw &kde;-instellingen (<filename
+>$HOME/.kde4/share/config</filename
+> of iets soortgelijks). Het bevat zoiets als dit:</para
+></listitem>
+</orderedlist>
+<para
+><userinput
+>[SpecialCollections] DefaultResourceId=akonadi_maildir_resource_0</userinput>
+</para>
+<para
+>Start nu <application
+>akonadiconsole</application
+>, op het tabblad <guilabel
+>Agents</guilabel
+> zoekt u uw lokale account waarin u uw map <emphasis
+>Postvak uit</emphasis
+> wilt hebben, klik er op en noteer de identifier die verschijnt in het onderste deel van (<replaceable
+>akonadi_maildir_resource_XXX</replaceable
+> of iets soortgelijks). Stop deze identifier in de boven getoonde <filename
+>specialmailcollectionsrc</filename
+>, door de bestaande te vervangen. </para>
+<para
+>Na het opnieuw starten van <application
+>akonadi</application
+> (u kunt dat doen vanuit <application
+>akonadiconsole</application
+>, <menuchoice
+><guimenu
+>Server</guimenu
+><guimenuitem
+>Server herstarten</guimenuitem
+></menuchoice
+> of vanaf de opdrachtregel met: </para>
+<para
+><userinput
+>akonadictl restart</userinput>
+</para>
+<para
+>Verwijder daarna de <guilabel
+>Lokale mappen</guilabel
+> die u niet meer wilt gebruiken. </para>
+<para
+>Als het blijft verschijnen en de <guilabel
+>Agent voor het verzenden van e-mail</guilabel
+> blijft crashen, dan moet u nog een ding meer doen in <application
+>akonadiconsole</application
+>. Ga naar het tabblad <guilabel
+>Browser</guilabel
+>, zoek het Postvak uit dat u <emphasis
+>wilt</emphasis
+> gebruiken, klik er rechts op, selecteer <guilabel
+>Mapeigenschappen</guilabel
+>, tabblad <guilabel
+>Attributen</guilabel
+>, voer <userinput
+>SpecialCollectionAttribute</userinput
+> in en klik dan op <guilabel
+>Toevoegen</guilabel
+>, dubbelklik op <guilabel
+>Waarde</guilabel
+> bij <guilabel
+>SpecialCollectionAttribute</guilabel
+> en voer <userinput
+>Postvak uit</userinput
+> in. Voeg ook een ander attribuut toe, de attribuutnaam moet <guilabel
+>ENTITYDISPLAY</guilabel
+> zijn en de waarde <userinput
+>("outbox" "mail-folder-outbox" "" ())</userinput
+> (gewoon vanaf hier kopiëren plakken). Start <application
+>akonadi</application
+> opnieuw en nu zou u in staat moeten zijn om het onnodige account lokale map te verwijderen. </para>
+</sect1>
+
+<sect1 id="you-get-the-error-unable-to-fetch-item-from-backend-when-entering-imap-folder"
+><title
+>U krijgt de fout Item ophalen uit de backend wanneer u een IMAP-map ingaat</title>
+<para
+>Er zijn een aantal mogelijke redenen hiervoor en het is iets dat het &kmail;-team op den duur hoopt op te lossen. Intussen zijn er mogelijkheden om er omheen te werken: </para>
+<variablelist>
+  <varlistentry>
+    <term
+>Workaround 1</term>
+    <listitem>
+      <itemizedlist>
+        <listitem
+><para
+>bewerk <filename
+>~/.local/share/akonadi/mysql.conf</filename
+></para
+></listitem>
+        <listitem
+><para
+>Onder de sectie <guilabel
+>[mysql]</guilabel
+> voeg toe: <userinput
+>binlog_format=row</userinput
+></para
+></listitem>
+      </itemizedlist>
+      <para
+>Als dat niet werkt, probeer workaround 2 (onderstaand). </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term
+>Workaround 2</term>
+    <listitem>
+      <para
+>Hierbij gaat het hoofdzakelijk om het opnieuw starten zodat &kmail; de vervelende items kan ophalen... Enkele mogelijke  stappen:</para>
+      <para
+>Gebruik <keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> of &konsole; om te typen: <userinput
+><command
+>kquitapp kmail</command
+></userinput
+>, wacht dan een minuut, dan <userinput
+><command
+>akonadictl stop</command
+></userinput
+>, wacht een minuut, type <userinput
+><command
+>akonadictl start</command
+></userinput
+>, wacht een minuut, typ <userinput
+><command
+>kmail</command
+></userinput
+>. Dit stopt &kmail; (met het sluiten van <emphasis
+>alle</emphasis
+> vensters), stopt de backend van &kmail;, start deze en start &kmail;. Met een werkende internetverbinding wordt de kans op succes vergroot. Soms kunt u ook gewoon <userinput
+><command
+>kquitapp kmail</command
+></userinput
+> doen, wacht een minuut en start &kmail; opnieuw. Vaak zijn er een paar keer opnieuw starten nodig. Het is onduidelijk wat de reden hiervan is, maar met een slechte netwerkverbinding is het meer waarschijnlijk. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+<para
+>Zie ook het onderstaande item voor hoe <application
+>akonadiconsole</application
+> behulpzaam kan zijn. </para>
+</sect1>
+
+<sect1 id="your-mails-are-not-being-sent-without-error-messages"
+><title
+>Uw e-mails worden niet verzonden, zonder foutmeldingen</title>
+<para
+>Als &kmail; geen e-mail verzendt zonder iets te melden, dan is de <quote
+>agent</quote
+> verantwoordelijk voor het versturen van de berichten vastgelopen. Natuurlijk moet u er voor zorgen dat u behoorlijke netwerkverbinding hebt voor het verzenden van e-mail! </para>
+<para
+>Om dit te verhelpen kan het zijn dat de huidige actie afbreken en opnieuw starten helpt. Beëindig als eerste &kmail; door &krunner; te gebruiken (<keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+>) of &konsole; en invoeren van: <userinput
+><command
+>kquitapp kmail</command
+></userinput
+>. Merk op dat een normale <keycombo
+>&Alt;<keycap
+>F4</keycap
+></keycombo
+> of <menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Afsluiten</guimenuitem
+></menuchoice
+> <emphasis
+>niet</emphasis
+> helpt! Wacht een minuut, start dan &kmail; opnieuw. Start dan <application
+>akonadiconsole</application
+> met &krunner; (<keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+>) of &konsole;. Ga naar de <guilabel
+>Agent voor het verzenden van e-mail</guilabel
+>, klik rechts en breek de huidige actie af. U zult waarschijnlijk een soort foutmelding zien verschijnen. Ga terug naar &kmail; en kies <menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Berichten in wachtrij verzenden</guimenuitem
+></menuchoice
+>. Nu zou het kunnen werken. Zo niet, in plaats van de huidige actie afbreken, probeer de status offline/online van de <guilabel
+>Agent voor het verzenden van e-mail</guilabel
+> om te schakelen of start de dingen opnieuw zoals eerder in de workaround 2 van het eerdere probleem is genoemd. </para>
+<para
+><note
+><para
+>akonadiconsole kan erg behulpzaam zijn voor een aantal situaties omdat het alle <quote
+>agents</quote
+> toont, de separate componenten van de backend van &kmail;. U kunt ze stoppen en starten, ze in een modus offline zetten, gaande acties afbreken &etc; Het kan zeer behulpzaam zijn wanneer dingen vastzitten.</para
+></note>
+</para>
+</sect1>
+
+</chapter>

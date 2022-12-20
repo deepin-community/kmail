@@ -1,0 +1,237 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Dimitris Kardarakos <dimkard@gmail.com>, 2014.
+# Stelios <sstavra@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-05-21 00:17+0000\n"
+"PO-Revision-Date: 2020-09-20 09:37+0300\n"
+"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#: sendlaterconfiguredialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure"
+msgstr "Διαμόρφωση"
+
+#: sendlaterconfiguredialog.cpp:47
+#, kde-format
+msgid "Send Later Agent"
+msgstr "Πράκτορας ετεροχρονισμένης αποστολής"
+
+#: sendlaterconfiguredialog.cpp:49
+#, kde-format
+msgid "Send emails later agent."
+msgstr "Πράκτορας ετεροχρονισμένης αποστολής αλληλογραφίας."
+
+#: sendlaterconfiguredialog.cpp:51
+#, fuzzy, kde-format
+#| msgid "Copyright (C) 2013-2020 Laurent Montel"
+msgid "Copyright (C) 2013-2021 Laurent Montel"
+msgstr "Copyright (C) 2013-2020 Laurent Montel"
+
+#: sendlaterconfiguredialog.cpp:53
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: sendlaterconfiguredialog.cpp:53
+#, kde-format
+msgid "Maintainer"
+msgstr "Συντηρητής"
+
+#: sendlaterconfiguredialog.cpp:56
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Δημήτρης Καρδαράκος"
+
+#: sendlaterconfiguredialog.cpp:56
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "dimkard@gmail.com"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "To"
+msgstr "Προς"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Subject"
+msgstr "Θέμα"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Send around"
+msgstr "Αποστολή γύρω"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Recurrent"
+msgstr "Επαναλαμβανόμενο"
+
+#: sendlaterconfigurewidget.cpp:58
+#, kde-format
+msgid "Message Id"
+msgstr "Αναγνωριστικό μηνύματος"
+
+#: sendlaterconfigurewidget.cpp:69
+#, kde-format
+msgid "No messages waiting..."
+msgstr "Κανένα μήνυμα σε αναμονή..."
+
+#: sendlaterconfigurewidget.cpp:92
+#, kde-format
+msgid "Send now"
+msgstr "Αποστολή τώρα"
+
+#: sendlaterconfigurewidget.cpp:95
+#, kde-format
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: sendlaterconfigurewidget.cpp:156
+#, kde-format
+msgid "Yes"
+msgstr "Ναι"
+
+#: sendlaterconfigurewidget.cpp:156
+#, kde-format
+msgid "No"
+msgstr "Όχι"
+
+#: sendlaterconfigurewidget.cpp:201
+#, kde-format
+msgid "Do you want to delete the selected item?"
+msgid_plural "Do you want to delete the selected items?"
+msgstr[0] "Θέλετε να διαγραφεί το επιλεγμένο αντικείμενο;"
+msgstr[1] "Θέλετε να διαγραφούν τα επιλεγμένα αντικείμενα;"
+
+#: sendlaterconfigurewidget.cpp:202
+#, kde-format
+msgid "Remove items"
+msgstr "Αφαίρεση αντικειμένων"
+
+#: sendlaterconfigurewidget.cpp:208
+#, kde-format
+msgid "Do you want to remove the messages as well?"
+msgstr "Επιθυμείτε την αφαίρεση και των μηνυμάτων;"
+
+#: sendlaterconfigurewidget.cpp:208
+#, kde-format
+msgid "Remove messages"
+msgstr "Αφαίρεση μηνυμάτων"
+
+#: sendlaterjob.cpp:55 sendlaterjob.cpp:58
+#, kde-format
+msgid "Not message found."
+msgstr "Το μήνυμα δεν βρέθηκε."
+
+#: sendlaterjob.cpp:66
+#, kde-format
+msgid "No message found."
+msgstr "Δεν βρέθηκε μήνυμα."
+
+#: sendlaterjob.cpp:75
+#, kde-format
+msgid "Error during fetching message."
+msgstr "Σφάλμα κατά την ανάκτηση του μηνύματος."
+
+#: sendlaterjob.cpp:81
+#, kde-format
+msgid "Cannot fetch message. %1"
+msgstr "Αδυναμία προσκόμισης του μηνύματος. %1"
+
+#: sendlaterjob.cpp:86
+#, kde-format
+msgid "We can't create transport"
+msgstr "Αδυναμία δημιουργίας μεταφοράς"
+
+#: sendlaterjob.cpp:93
+#, kde-format
+msgid "Message is not a real message"
+msgstr "Το μήνυμα δεν αποτελεί ένα πραγματικό μήνυμα"
+
+#: sendlaterjob.cpp:100
+#, kde-format
+msgid "Cannot send message."
+msgstr "Αδυναμία αποστολής του μηνύματος."
+
+#: sendlaterjob.cpp:131
+#, kde-format
+msgid "Message sent"
+msgstr "Το μήνυμα εστάλη"
+
+#: sendlatermanager.cpp:190
+#, kde-format
+msgid "An error was found. Do you want to resend it?"
+msgstr "Βρέθηκε σφάλμα. Επιθυμείτε να το στείλετε ξανά;"
+
+#: sendlatermanager.cpp:190
+#, kde-format
+msgid "Error found"
+msgstr "Βρέθηκε σφάλμα"
+
+#. i18n: ectx: property (text), widget (QPushButton, modifyItem)
+#: ui/sendlaterconfigurewidget.ui:31
+#, kde-format
+msgid "Modify..."
+msgstr "Τροποποίηση..."
+
+#. i18n: ectx: property (text), widget (QPushButton, removeItem)
+#: ui/sendlaterconfigurewidget.ui:38
+#, kde-format
+msgid "Remove"
+msgstr "Αφαίρεση"
+
+#, fuzzy
+#~| msgid "Send Later"
+#~ msgctxt "@title:window"
+#~ msgid "Send Later"
+#~ msgstr "Αποστολή αργότερα"
+
+#, fuzzy
+#~| msgid "Send Later"
+#~ msgid "Send Later"
+#~ msgstr "Αποστολή αργότερα"
+
+#~ msgid "Delay"
+#~ msgstr "Καθυστέρηση"
+
+#~ msgid "Days"
+#~ msgstr "Ημέρες"
+
+#~ msgid "Weeks"
+#~ msgstr "Εβδομάδες"
+
+#~ msgid "Months"
+#~ msgstr "Μήνες"
+
+#~ msgid "Years"
+#~ msgstr "Έτη"
+
+#~ msgid "You cannot select a date prior to the current date."
+#~ msgstr "Δεν μπορείτε να επιλέξετε ημερομηνία προ της τρέχουσας ημερομηνίας."
+
+#~ msgid "Send at:"
+#~ msgstr "Αποστολή στις:"
+
+#~ msgid "Repeat every:"
+#~ msgstr "Επανάληψη κάθε:"
+
+#, fuzzy
+#~| msgid "Send Later"
+#~ msgid "SendLater"
+#~ msgstr "Αποστολή αργότερα"

@@ -1,0 +1,119 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kmail package.
+#
+# Stelios <sstavra@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-03-24 02:26+0100\n"
+"PO-Revision-Date: 2020-09-20 09:26+0300\n"
+"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#: followupreminderinfoconfigwidget.cpp:25
+#, kde-format
+msgid "Follow Up Reminder Agent"
+msgstr "Πράκτορας υπενθυμίσεων συνέχειας αλληλογραφίας"
+
+#: followupreminderinfoconfigwidget.cpp:27
+#, kde-format
+msgid "Follow Up Reminder"
+msgstr "Υπενθύμιση συνέχειας αλληλογραφίας"
+
+#: followupreminderinfoconfigwidget.cpp:29
+#, fuzzy, kde-format
+#| msgid "Copyright (C) 2014-2020 Laurent Montel"
+msgid "Copyright (C) 2014-2021 Laurent Montel"
+msgstr "Copyright (C) 2014-2020 Laurent Montel"
+
+#: followupreminderinfoconfigwidget.cpp:31
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: followupreminderinfoconfigwidget.cpp:31
+#, kde-format
+msgid "Maintainer"
+msgstr "Συντηρητής"
+
+#: followupreminderinfoconfigwidget.cpp:33
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stelios"
+
+#: followupreminderinfoconfigwidget.cpp:33
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sstavra@gmail.com"
+
+#: followupreminderinfowidget.cpp:60
+#, kde-format
+msgid "To"
+msgstr "Προς"
+
+#: followupreminderinfowidget.cpp:60
+#, kde-format
+msgid "Subject"
+msgstr "Θέμα"
+
+#: followupreminderinfowidget.cpp:60
+#, kde-format
+msgid "Dead Line"
+msgstr "Προθεσμία"
+
+#: followupreminderinfowidget.cpp:60
+#, kde-format
+msgid "Answer"
+msgstr "Απάντηση"
+
+#: followupreminderinfowidget.cpp:124
+#, kde-format
+msgid "Received"
+msgstr "Ελήφθη"
+
+#: followupreminderinfowidget.cpp:124
+#, kde-format
+msgid "On hold"
+msgstr "Σε αναμονή"
+
+#: followupreminderinfowidget.cpp:181
+#, kde-format
+msgid "Show Message"
+msgstr "Εμφάνιση μηνύματος"
+
+#: followupreminderinfowidget.cpp:185 followupreminderinfowidget.cpp:212
+#, kde-format
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: followupreminderinfowidget.cpp:211
+#, kde-format
+msgid "Do you want to remove this selected item?"
+msgid_plural "Do you want to remove these %1 selected items?"
+msgstr[0] "Θέλετε να αφαιρέσετε αυτό το επιλεγμένο αντικείμενο;"
+msgstr[1] "Θέλετε να αφαιρέσετε αυτά τα %1 επιλεγμένα αντικείμενα;"
+
+#: followupremindermanager.cpp:156
+#, kde-format
+msgid "Answer from %1 received"
+msgstr "Ελήφθη απάντηση από %1"
+
+#: followupremindernoanswerdialog.cpp:34
+#, kde-format
+msgctxt "@title:window"
+msgid "Follow Up Reminder"
+msgstr "Υπενθύμιση συνέχειας αλληλογραφίας"
+
+#: followupremindernoanswerdialog.cpp:40
+#, kde-format
+msgid "You still wait an answer about this mail:"
+msgstr "Ακόμη περιμένετε απάντηση σχετικά με αυτό το μήνυμα:"

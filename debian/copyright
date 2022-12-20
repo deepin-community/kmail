@@ -1,0 +1,458 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: kmail
+Upstream-Contact: kde-devel@kde.org
+Source: https://invent.kde.org/pim/kmail
+
+Files: *
+Copyright: 2013-2014, &Laurent.Montel; &Laurent.Montel.mail
+           2013-2014, &Laurent.Montel; &Laurent.Montel.mail; </para>
+           2001, Aaron J. Seigo <aseigo@kde.org>
+           2012, Allen Winter
+           2008, Allen Winter <winter@kde.org>
+           2012, Andras Mantia <amantia@kde.org>
+           2009, Constantin Berzan <exit3219@gmail.com>
+           2000-2004, Cornelius Schumacher <schumacher@kde.org>
+           2002-2003, Don Sanders <sanders@kde.org>
+           2000, Espen Sand <espen@kde.org>
+           1951, Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+           1989-2011, Free Software Foundation, Inc
+           2003, Ingo Kloecker <kloecker@kde.org>
+           2010, KDAB
+           2000-2002, KDE e.v
+           1997-2017, KMail authors
+           1997-2013, KMail autori
+           2016, Klarälvdalens Datakonsult AB, a KDAB Group company <info@kdab.net>
+           1997-2012, Kmail लेखक
+           2003-2013, Kontact Developer <kde-pim@kde.org>
+           2012-2018, Laurent Montel
+           2001-2003, Marc Mutz <mutz@kde.org>
+           1997, Markus Wuebben <markus.wuebben@kde.org>
+           2007, Mathias Soeken <msoeken@tzi.de>
+           2000-2003, Meni Livne <livne@kde.org>
+           2000, Michael Goffioul
+           2009-2018, Montel Laurent <montel@kde.org>
+           1998-1999, Preston Brown <pbrown@kde.org>
+           2007, Robert Gruber
+           2012, Rosetta Contributors and Canonical Ltd 2012
+           2013, Rosetta Contributors and Canonical Ltd 2013
+           2001, Ryan Breen
+           2016, Sandro Knauß <sknauss@kde.org>
+           1996-1998, Stefan Taferner <taferner@kde.org>
+           1998-2018, This_file_is_part_of_KDE
+           2007, Thomas McGuire <Thomas.McGuire@gmx.net>
+           2005, Till Adam
+           2010, Till Adam <adam@kde.org>
+           2004-2010, Tobias Koenig
+           2003-2004, Tobias Koenig <tokoe@kde.org>
+           2007-2010, Volker Krause <vkrause@kde.org>
+           2003, Zack Rusin <zack@kde.org>
+           1997-2013, a equipa de desenvolvimento do &kmail;,</para>
+           2012, beforemissing, see KMail copyrights
+           2013-2014, de &Laurent.Montel; &Laurent.Montel.mail; </para>
+           1997-2013, de ontwikkelaars van &kmail;,</para>
+           1997-2013, degli sviluppatori di &kmail;,</para>
+           1997-2013, dels desenvolupadors del &kmail;,</para>
+           1997-2013, die &kmail;-Entwickler</para>
+           1997-2013, the &kmail; developers,</para>
+License: GPL-2+
+
+Files: agents/mailfilteragent/filterlogdialog.cpp
+       agents/mailfilteragent/filterlogdialog.h
+       src/aboutdata.cpp
+       src/aboutdata.h
+       src/attributes/*
+       src/autotests/cryptostateindicatorwidgettest.cpp
+       src/autotests/cryptostateindicatorwidgettest.h
+       src/autotests/displaymessageformatactionmenutest.cpp
+       src/autotests/displaymessageformatactionmenutest.h
+       src/autotests/identityaddvcarddialogtest.cpp
+       src/autotests/identityaddvcarddialogtest.h
+       src/autotests/kactionmenutransporttest.cpp
+       src/autotests/kactionmenutransporttest.h
+       src/autotests/tagselectdialogtest.cpp
+       src/autotests/tagselectdialogtest.h
+       src/avscripts/kmail_antivir.sh
+       src/avscripts/kmail_clamav.sh
+       src/avscripts/kmail_fprot.sh
+       src/avscripts/kmail_sav.sh
+       src/collectionpage/collectionmailinglistpage.cpp
+       src/collectionpage/collectionmailinglistpage.h
+       src/collectionpage/collectionquotapage.cpp
+       src/collectionpage/collectionquotapage.h
+       src/collectionpage/collectionquotawidget.cpp
+       src/collectionpage/collectionquotawidget.h
+       src/collectionpage/collectionshortcutpage.cpp
+       src/collectionpage/collectionshortcutpage.h
+       src/configuredialog/configureaccountpage.cpp
+       src/configuredialog/configureaccountpage.h
+       src/configuredialog/configureappearancepage.cpp
+       src/configuredialog/configureappearancepage.h
+       src/configuredialog/configurecomposerpage.cpp
+       src/configuredialog/configurecomposerpage.h
+       src/configuredialog/configuremiscpage.cpp
+       src/configuredialog/configuremiscpage.h
+       src/configuredialog/configurepluginpage.cpp
+       src/configuredialog/configurepluginpage.h
+       src/configuredialog/configureplugins/*
+       src/configuredialog/configuresecuritypage.cpp
+       src/configuredialog/configuresecuritypage.h
+       src/dialog/addemailtoexistingcontactdialog.cpp
+       src/dialog/addemailtoexistingcontactdialog.h
+       src/editor/kmcomposereditorng.cpp
+       src/editor/kmcomposereditorng.h
+       src/editor/kmcomposerglobalaction.cpp
+       src/editor/kmcomposerglobalaction.h
+       src/editor/validatesendmailshortcut.cpp
+       src/editor/validatesendmailshortcut.h
+       src/identity/identityaddvcarddialog.cpp
+       src/identity/identityaddvcarddialog.h
+       src/identity/identitydialog.cpp
+       src/identity/identitydialog.h
+       src/identity/identityeditvcarddialog.cpp
+       src/identity/identityeditvcarddialog.h
+       src/identity/identityfolderrequester.cpp
+       src/identity/identityfolderrequester.h
+       src/identity/identityinvalidfolder.cpp
+       src/identity/identityinvalidfolder.h
+       src/identity/identitylistview.cpp
+       src/identity/identitylistview.h
+       src/identity/xfaceconfigurator.h
+       src/kmcommands.cpp
+       src/kmmainwidget.cpp
+       src/kmmainwidget.h
+       src/kmreadermainwin.cpp
+       src/mailserviceimpl.cpp
+       src/mailserviceimpl.h
+       src/searchdialog/kmailsearchpatternedit.cpp
+       src/searchdialog/kmailsearchpatternedit.h
+       src/searchdialog/kmsearchmessagemodel.cpp
+       src/searchdialog/kmsearchmessagemodel.h
+       src/secondarywindow.cpp
+       src/secondarywindow.h
+       src/settings/kmailsettings.cpp
+       src/settings/kmailsettings.h
+       src/sieveimapinterface/tests/vacation/main.cpp
+       src/undostack.cpp
+       src/undostack.h
+Copyright: 2003, Andreas Gungl <a.gungl@gmx.de>
+           2005, David Faure <faure@kde.org>
+           2000-2002, Don Sanders <sanders@kde.org>
+           2004, Fred Emmott <fred87@users.sf.net>
+           2004, Hendrik Muhs <Hendrik.Muhs@web.de>
+           2003, Ingo Kloecker <kloecker@kde.org>
+           2004, Jakob Schröter <js@camaya.net>
+           2012-2013, Jonathan Marten <jjm@keelhaul.me.uk>
+           1997-2018, KMail authors
+           2012-2017, Laurent Montel <montel@kde.or>
+           2009-2018, Montel Laurent <montel@kde.org>
+           2002-2003, Marc Mutz <mutz@kde.org>
+           2007, Mathias Soeken <msoeken@tzi.de>
+           2004-2006, Till Adam <adam@kde.org>
+           1999, Waldo Bastian <bastian@kde.org>
+           2003, Zack Rusin <zack@kde.org>
+           2002, the KMail authors
+License: GPL-2
+
+Files: agents/mailfilteragent/mailfilteragent.cpp
+       agents/mailfilteragent/mailfilteragent.h
+       src/configuredialog/configagentdelegate.cpp
+       src/configuredialog/configagentdelegate.h
+       src/editor/kmcomposercreatenewcomposerjob.cpp
+       src/editor/kmcomposercreatenewcomposerjob.h
+       src/editor/kmcomposerupdatetemplatejob.cpp
+       src/editor/kmcomposerupdatetemplatejob.h
+       src/editor/potentialphishingemail/autotests/potentialphishingdetaildialogtest.cpp
+       src/editor/potentialphishingemail/autotests/potentialphishingdetaildialogtest.h
+       src/editor/potentialphishingemail/autotests/potentialphishingdetailwidgettest.cpp
+       src/editor/potentialphishingemail/autotests/potentialphishingdetailwidgettest.h
+       src/editor/potentialphishingemail/autotests/potentialphishingemailjobtest.cpp
+       src/editor/potentialphishingemail/autotests/potentialphishingemailjobtest.h
+       src/editor/potentialphishingemail/autotests/potentialphishingemailwarningtest.cpp
+       src/editor/potentialphishingemail/autotests/potentialphishingemailwarningtest.h
+       src/editor/potentialphishingemail/potentialphishingdetaildialog.cpp
+       src/editor/potentialphishingemail/potentialphishingdetaildialog.h
+       src/editor/potentialphishingemail/potentialphishingdetailwidget.cpp
+       src/editor/potentialphishingemail/potentialphishingdetailwidget.h
+       src/editor/potentialphishingemail/potentialphishingemailjob.cpp
+       src/editor/potentialphishingemail/potentialphishingemailjob.h
+       src/editor/potentialphishingemail/potentialphishingemailwarning.cpp
+       src/editor/potentialphishingemail/potentialphishingemailwarning.h
+       src/identity/xfaceconfigurator.cpp
+       src/job/composenewmessagejob.cpp
+       src/job/composenewmessagejob.h
+       src/job/createforwardmessagejob.cpp
+       src/job/createforwardmessagejob.h
+       src/job/createnewcontactjob.cpp
+       src/job/createnewcontactjob.h
+       src/job/createreplymessagejob.cpp
+       src/job/createreplymessagejob.h
+       src/job/createtaskjob.cpp
+       src/job/createtaskjob.h
+       src/job/fillcomposerjob.cpp
+       src/job/fillcomposerjob.h
+       src/job/handleclickedurljob.cpp
+       src/job/handleclickedurljob.h
+       src/job/markallmessagesasreadinfolderandsubfolderjob.cpp
+       src/job/markallmessagesasreadinfolderandsubfolderjob.h
+       src/job/newmessagejob.cpp
+       src/job/newmessagejob.h
+       src/job/opencomposerhiddenjob.cpp
+       src/job/opencomposerhiddenjob.h
+       src/job/opencomposerjob.cpp
+       src/job/opencomposerjob.h
+       src/job/removeduplicatemessageinfolderandsubfolderjob.cpp
+       src/job/removeduplicatemessageinfolderandsubfolderjob.h
+       src/job/saveasfilejob.cpp
+       src/job/saveasfilejob.h
+       src/job/savedraftjob.cpp
+       src/job/savedraftjob.h
+       src/kontactplugin/summary/dropwidget.cpp
+       src/kontactplugin/summary/dropwidget.h
+       src/kontactplugin/summary/summaryview_part.cpp
+       src/kontactplugin/summary/summaryview_part.h
+       src/kontactplugin/summary/summaryview_plugin.cpp
+       src/kontactplugin/summary/summaryview_plugin.h
+       src/searchdialog/searchdescriptionattribute.cpp
+       src/searchdialog/searchdescriptionattribute.h
+       src/sieveimapinterface/kmsieveimappasswordprovider.cpp
+       src/sieveimapinterface/kmsieveimappasswordprovider.h
+       src/sieveimapinterface/tests/sievedebugdialog/sievedebugdialog.cpp
+       src/sieveimapinterface/tests/sievemanagerdialog/sievemanagerdialog.cpp
+Copyright: 2017, Albert Astals Cid <aacid@kde.org>
+           2008, Allen Winter <winter@kde.org>
+           2010, Casey Link <unnamedrambler@gmail.com>
+           2003, Daniel Molkentin <molkentin@kde.org>
+           2004, Jakob Schr�er <js@camaya.net>
+           2009-2010, Klaralvdalens Datakonsult AB, a KDAB Group company <info@kdab.net>
+           2012-2018, Montel Laurent <montel@kde.org>
+           2003, Sven L�ppken <sven@kde.org>
+           2010, Till Adam <adam@kde.org>
+           2003-2011, Tobias Koenig <tokoe@kde.org>
+           2010, Volker Krause <vkrause@kde.org>
+License: LGPL-2+
+
+Files: doc/akonadi_archivemail_agent/index.docbook
+       doc/kmail2/index.docbook
+       po/ca/docs/akonadi_archivemail_agent/index.docbook
+       po/ca/docs/kmail2/index.docbook
+       po/ca/docs/ktnef/*
+       po/de/docs/akonadi_archivemail_agent/*
+       po/de/docs/kmail2/index.docbook
+       po/de/docs/ktnef/*
+       po/es/docs/akonadi_archivemail_agent/*
+       po/es/docs/kmail2/index.docbook
+       po/es/docs/ktnef/*
+       po/et/docs/akonadi_archivemail_agent/*
+       po/et/docs/ktnef/*
+       po/it/docs/akonadi_archivemail_agent/*
+       po/it/docs/ktnef/*
+       po/nl/docs/akonadi_archivemail_agent/*
+       po/nl/docs/kmail2/index.docbook
+       po/nl/docs/ktnef/*
+       po/pt/docs/ktnef/*
+       po/pt_BR/docs/akonadi_archivemail_agent/*
+       po/pt_BR/docs/kmail2/index.docbook
+       po/pt_BR/docs/ktnef/*
+       po/sv/docs/akonadi_archivemail_agent/*
+       po/sv/docs/kmail2/index.docbook
+       po/sv/docs/ktnef/*
+       po/uk/docs/akonadi_archivemail_agent/*
+       po/uk/docs/kmail2/index.docbook
+       po/uk/docs/ktnef/index.docbook
+Copyright: 2000, &Michael.Goffioul; <email
+           2012, Allen Winter <email
+           2013, Laurent Montel <montel@kde.org>
+           2013, Laurent Montel montel@kde.org </para>
+License: GFDL-1.2+
+
+Files: ktnef/*
+Copyright: 2012, Allen Winter <winter@kde.org>
+           2000-2004, Cornelius Schumacher <schumacher@kde.org>
+           1991-1999, Free Software Foundation, Inc
+           2002-2003, Michael Goffioul <kdeprint@swing.be>
+           1998-1999, Preston Brown <pbrown@kde.org>
+           1998, Stefan Taferner
+License: LGPL-2.1+
+
+Files: ktnef/src/attachpropertydialog.cpp
+       ktnef/src/attachpropertydialog.h
+       ktnef/src/ktnef-version.h.cmake
+       ktnef/src/ktnefmain.cpp
+       ktnef/src/ktnefmain.h
+       ktnef/src/ktnefview.cpp
+       ktnef/src/ktnefview.h
+       ktnef/src/main.cpp
+       ktnef/src/messagepropertydialog.cpp
+       ktnef/src/messagepropertydialog.h
+       ktnef/src/qwmf.cpp
+       ktnef/src/qwmf.h
+Copyright: 2012, Allen Winter <winter@kde.org>
+           2000-2004, Cornelius Schumacher <schumacher@kde.org>
+           1951, Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+           1989-1991, Free Software Foundation, Inc
+           2002-2003, Michael Goffioul <kdeprint@swing.be>
+           1998-1999, Preston Brown <pbrown@kde.org>
+           1998, Stefan Taferner
+License: GPL-2+
+
+Files: po/ca/akonadi_followupreminder_agent.po
+       po/ca/akonadi_mailfilter_agent.po
+       po/ca/akonadi_sendlater_agent.po
+       po/ca@valencia/akonadi_followupreminder_agent.po
+       po/ca@valencia/akonadi_mailfilter_agent.po
+       po/ca@valencia/akonadi_sendlater_agent.po
+       po/uk/akonadi_archivemail_agent.po
+       po/uk/akonadi_followupreminder_agent.po
+       po/uk/akonadi_mailfilter_agent.po
+       po/uk/akonadi_sendlater_agent.po
+       po/uk/kmail.po
+       po/uk/ktnef.po
+Copyright: 2012-2017, Laurent Montel
+           2002-2018, This_file_is_part_of_KDE
+License: LGPL-2.1+3+KDEeV
+
+Files: src/dialog/archivefolderdialog.cpp
+       src/dialog/archivefolderdialog.h
+       src/foldershortcutactionmanager.cpp
+       src/foldershortcutactionmanager.h
+       src/tag/tagactionmanager.cpp
+       src/tag/tagactionmanager.h
+Copyright: 2009, Klarälvdalens Datakonsult AB
+           2011-2018, Laurent Montel <montel@kde.org>
+           2010, Thomas McGuire <mcguire@kde.org>
+License: GPL-2+3+KDEeV
+
+Files: ktnef/src/metafuncs.h
+       ktnef/src/wmfstruct.h
+Copyright: 2003, Stefan Taferner <taferner@kde.org>
+License: LGPL-2
+
+Files: ktnef/doc/index.docbook
+Copyright: 2000, &Michael.Goffioul; <email>kde-print@kde.org</email>.</para>
+           2012, Allen Winter <email>winter@kde.org</email>.</para>
+License: GFDL-1.2+
+
+Files: src/data/org.kde.kmail2.appdata.xml
+Copyright: KDE e.V.
+License: CC0-1.0
+
+Files: debian/*
+Copyright: 2009, Sune Vuorela <debian@pusling.com>
+License: LGPL-2+
+
+License: CC0-1.0
+ This file is distributed under the license LGPL version 2.1 or
+ version 3 or later versions approved by the membership of KDE e.V.
+ .
+ The complete text of the GNU Lesser General Public License version 2.1
+ can be found in `/usr/share/common-licenses/LGPL-2.1'.
+ .
+ The complete text of the GNU Lesser General Public License version 3
+ can be found in `/usr/share/common-licenses/LGPL-3'.
+
+License: GFDL-1.2+
+ Permission is granted to copy, distribute and/or modify this document
+ under the terms of the GNU Free Documentation License, Version 1.2
+ or any later version published by the Free Software Foundation;
+ with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU
+ Free Documentation License".
+ .
+ The complete text of the GNU Free Documentation License version 1.2
+ can be found in `/usr/share/common-licenses/GFDL-1.2'.
+
+License: GPL-2
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 of the license.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ The complete text of the GNU General Public License version 2
+ can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ The complete text of the GNU General Public License version 2
+ can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-2+3+KDEeV
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of
+ the License or (at your option) version 3 or any later version
+ accepted by the membership of KDE e.V. (or its successor approved
+ by the membership of KDE e.V.), which shall act as a proxy
+ defined in Section 14 of version 3 of the license.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ The complete text of the GNU General Public License version 2
+ can be found in `/usr/share/common-licenses/GPL-2', likewise,
+ the complete text of the GNU General Public License version 3
+ can be found in `/usr/share/common-licenses/GPL-3'.
+
+License: LGPL-2
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License version 2 as published by the Free Software Foundation.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Library General Public License for more details.
+ .
+ The complete text of the GNU Library General Public License version 2
+ can be found in `/usr/share/common-licenses/LGPL-2'.
+
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Library General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or (at your
+ option) any later version.
+ .
+ This library is distributed in the hope that it will be useful, but WITHOUT
+ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library General Public
+ License for more details.
+ .
+ The complete text of the GNU Library General Public License version 2
+ can be found in `/usr/share/common-licenses/LGPL-2'.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ The complete text of the GNU Lesser General Public License version 2.1
+ can be found in `/usr/share/common-licenses/LGPL-2.1'.
+
+License: LGPL-2.1+3+KDEeV
+ This file is distributed under the license LGPL version 2.1 or
+ version 3 or later versions approved by the membership of KDE e.V.
+ .
+ The complete text of the GNU Lesser General Public License version 2.1
+ can be found in `/usr/share/common-licenses/LGPL-2.1', likewise,
+ the complete text of the GNU Lesser General Public License version 3
+ can be found in `/usr/share/common-licenses/LGPL-3'.

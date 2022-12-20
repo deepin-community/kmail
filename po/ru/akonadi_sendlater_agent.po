@@ -1,0 +1,238 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Alexander Lakhin <exclusion@gmail.com>, 2013.
+# Alexander Potashev <aspotashev@gmail.com>, 2014, 2015, 2016.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2019, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-05-21 00:17+0000\n"
+"PO-Revision-Date: 2020-04-22 17:35+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 19.12.3\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: sendlaterconfiguredialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure"
+msgstr "Настройка агента отложенной доставки"
+
+#: sendlaterconfiguredialog.cpp:47
+#, kde-format
+msgid "Send Later Agent"
+msgstr "Агент «Отправить позже»"
+
+#: sendlaterconfiguredialog.cpp:49
+#, kde-format
+msgid "Send emails later agent."
+msgstr "Агент отложенной отправки"
+
+#: sendlaterconfiguredialog.cpp:51
+#, fuzzy, kde-format
+#| msgid "Copyright (C) 2013-2020 Laurent Montel"
+msgid "Copyright (C) 2013-2021 Laurent Montel"
+msgstr "© Laurent Montel, 2013–2020"
+
+#: sendlaterconfiguredialog.cpp:53
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: sendlaterconfiguredialog.cpp:53
+#, kde-format
+msgid "Maintainer"
+msgstr "Сопровождение"
+
+#: sendlaterconfiguredialog.cpp:56
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Александр Лахин,Олеся Герасименко"
+
+#: sendlaterconfiguredialog.cpp:56
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "exclusion@gmail.com,gammaray@basealt.ru"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "To"
+msgstr "Кому"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Subject"
+msgstr "Тема"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Send around"
+msgstr "Назначенное время"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Recurrent"
+msgstr "С повторением"
+
+#: sendlaterconfigurewidget.cpp:58
+#, kde-format
+msgid "Message Id"
+msgstr "Идентификатор письма"
+
+#: sendlaterconfigurewidget.cpp:69
+#, kde-format
+msgid "No messages waiting..."
+msgstr "Нет писем, ожидающих отправки"
+
+#: sendlaterconfigurewidget.cpp:92
+#, kde-format
+msgid "Send now"
+msgstr "Отправить сейчас"
+
+#: sendlaterconfigurewidget.cpp:95
+#, kde-format
+msgid "Delete"
+msgstr "Удалить"
+
+#: sendlaterconfigurewidget.cpp:156
+#, kde-format
+msgid "Yes"
+msgstr "Да"
+
+#: sendlaterconfigurewidget.cpp:156
+#, kde-format
+msgid "No"
+msgstr "Нет"
+
+#: sendlaterconfigurewidget.cpp:201
+#, kde-format
+msgid "Do you want to delete the selected item?"
+msgid_plural "Do you want to delete the selected items?"
+msgstr[0] "Удалить выбранные записи?"
+msgstr[1] "Удалить выбранные записи?"
+msgstr[2] "Удалить выбранные записи?"
+msgstr[3] "Удалить выбранную запись?"
+
+#: sendlaterconfigurewidget.cpp:202
+#, kde-format
+msgid "Remove items"
+msgstr "Удаление записей"
+
+#: sendlaterconfigurewidget.cpp:208
+#, kde-format
+msgid "Do you want to remove the messages as well?"
+msgstr "Также удалить сообщения?"
+
+#: sendlaterconfigurewidget.cpp:208
+#, kde-format
+msgid "Remove messages"
+msgstr "Удаление сообщений"
+
+#: sendlaterjob.cpp:55 sendlaterjob.cpp:58
+#, kde-format
+msgid "Not message found."
+msgstr "Письмо не найдено."
+
+#: sendlaterjob.cpp:66
+#, kde-format
+msgid "No message found."
+msgstr "Письмо не найдено."
+
+#: sendlaterjob.cpp:75
+#, kde-format
+msgid "Error during fetching message."
+msgstr "Ошибка при извлечении сообщения."
+
+#: sendlaterjob.cpp:81
+#, kde-format
+msgid "Cannot fetch message. %1"
+msgstr "Получить сообщение для отправки не удалось. %1"
+
+#: sendlaterjob.cpp:86
+#, kde-format
+msgid "We can't create transport"
+msgstr "Создать транспорт не удалось."
+
+#: sendlaterjob.cpp:93
+#, kde-format
+msgid "Message is not a real message"
+msgstr "Отправляемое сообщение фактически сообщением не является"
+
+#: sendlaterjob.cpp:100
+#, kde-format
+msgid "Cannot send message."
+msgstr "Отправить сообщение не удалось."
+
+#: sendlaterjob.cpp:131
+#, kde-format
+msgid "Message sent"
+msgstr "Сообщение отправлено"
+
+#: sendlatermanager.cpp:190
+#, kde-format
+msgid "An error was found. Do you want to resend it?"
+msgstr "При отправке сообщения произошла ошибка. Хотите повторить отправку?"
+
+#: sendlatermanager.cpp:190
+#, kde-format
+msgid "Error found"
+msgstr "Ошибка при отправке"
+
+#. i18n: ectx: property (text), widget (QPushButton, modifyItem)
+#: ui/sendlaterconfigurewidget.ui:31
+#, kde-format
+msgid "Modify..."
+msgstr "Изменить..."
+
+#. i18n: ectx: property (text), widget (QPushButton, removeItem)
+#: ui/sendlaterconfigurewidget.ui:38
+#, kde-format
+msgid "Remove"
+msgstr "Удалить"
+
+#~ msgctxt "@title:window"
+#~ msgid "Send Later"
+#~ msgstr "Отложенная отправка"
+
+#~ msgid "Send Later"
+#~ msgstr "Отправить позже"
+
+#~ msgid "Delay"
+#~ msgstr "Задержка"
+
+#~ msgid "Days"
+#~ msgstr "(дни)"
+
+#~ msgid "Weeks"
+#~ msgstr "(недели)"
+
+#~ msgid "Months"
+#~ msgstr "(месяцы)"
+
+#~ msgid "Years"
+#~ msgstr "(годы)"
+
+#~ msgid "You cannot select a date prior to the current date."
+#~ msgstr "Выбрать уже дату в прошлом нельзя."
+
+#~ msgid "Send at:"
+#~ msgstr "Время отправки:"
+
+#~ msgid "Repeat every:"
+#~ msgstr "Повторять с интервалом:"
+
+#~ msgid "Put in outbox"
+#~ msgstr "Поместить в Исходящие"

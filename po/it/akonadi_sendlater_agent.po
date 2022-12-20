@@ -1,0 +1,262 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the akonadi_sendlater_agent package.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadi_sendlater_agent\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-05-21 00:17+0000\n"
+"PO-Revision-Date: 2021-03-26 19:53+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#: sendlaterconfiguredialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure"
+msgstr "Configura"
+
+#: sendlaterconfiguredialog.cpp:47
+#, kde-format
+msgid "Send Later Agent"
+msgstr "Agente per l'invio posticipato"
+
+#: sendlaterconfiguredialog.cpp:49
+#, kde-format
+msgid "Send emails later agent."
+msgstr "Agente per l'invio posticipato della posta elettronica."
+
+#: sendlaterconfiguredialog.cpp:51
+#, kde-format
+msgid "Copyright (C) 2013-2021 Laurent Montel"
+msgstr "Copyright (C) 2013-2021 Laurent Montel"
+
+#: sendlaterconfiguredialog.cpp:53
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: sendlaterconfiguredialog.cpp:53
+#, kde-format
+msgid "Maintainer"
+msgstr "Responsabile"
+
+#: sendlaterconfiguredialog.cpp:56
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Luigi Toscano"
+
+#: sendlaterconfiguredialog.cpp:56
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "luigi.toscano@tiscali.it"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "To"
+msgstr "A"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Subject"
+msgstr "Oggetto"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Send around"
+msgstr "Orario spedizione"
+
+#: sendlaterconfigurewidget.cpp:56
+#, kde-format
+msgid "Recurrent"
+msgstr "Ricorrente"
+
+#: sendlaterconfigurewidget.cpp:58
+#, kde-format
+msgid "Message Id"
+msgstr "ID del messaggio"
+
+#: sendlaterconfigurewidget.cpp:69
+#, kde-format
+msgid "No messages waiting..."
+msgstr "Nessun messaggio in attesa..."
+
+#: sendlaterconfigurewidget.cpp:92
+#, kde-format
+msgid "Send now"
+msgstr "Spedisci ora"
+
+#: sendlaterconfigurewidget.cpp:95
+#, kde-format
+msgid "Delete"
+msgstr "Elimina"
+
+#: sendlaterconfigurewidget.cpp:156
+#, kde-format
+msgid "Yes"
+msgstr "Sì"
+
+#: sendlaterconfigurewidget.cpp:156
+#, kde-format
+msgid "No"
+msgstr "No"
+
+#: sendlaterconfigurewidget.cpp:201
+#, kde-format
+msgid "Do you want to delete the selected item?"
+msgid_plural "Do you want to delete the selected items?"
+msgstr[0] "Vuoi eliminare l'elemento selezionato?"
+msgstr[1] "Vuoi eliminare gli elementi selezionati?"
+
+#: sendlaterconfigurewidget.cpp:202
+#, kde-format
+msgid "Remove items"
+msgstr "Rimuovi elementi"
+
+#: sendlaterconfigurewidget.cpp:208
+#, kde-format
+msgid "Do you want to remove the messages as well?"
+msgstr "Vuoi rimuovere anche i messaggi?"
+
+#: sendlaterconfigurewidget.cpp:208
+#, kde-format
+msgid "Remove messages"
+msgstr "Rimuovi messaggi"
+
+#: sendlaterjob.cpp:55 sendlaterjob.cpp:58
+#, kde-format
+msgid "Not message found."
+msgstr "Messaggio non trovato."
+
+#: sendlaterjob.cpp:66
+#, kde-format
+msgid "No message found."
+msgstr "Nessun messaggio trovato."
+
+#: sendlaterjob.cpp:75
+#, kde-format
+msgid "Error during fetching message."
+msgstr "Errore durante il recupero del messaggio."
+
+#: sendlaterjob.cpp:81
+#, kde-format
+msgid "Cannot fetch message. %1"
+msgstr "Impossibile recuperare il messaggio. %1"
+
+#: sendlaterjob.cpp:86
+#, kde-format
+msgid "We can't create transport"
+msgstr "Impossibile creare il trasporto"
+
+#: sendlaterjob.cpp:93
+#, kde-format
+msgid "Message is not a real message"
+msgstr "Il messaggio non è un vero messaggio"
+
+#: sendlaterjob.cpp:100
+#, kde-format
+msgid "Cannot send message."
+msgstr "Impossibile inviare il messaggio."
+
+#: sendlaterjob.cpp:131
+#, kde-format
+msgid "Message sent"
+msgstr "Messaggio inviato"
+
+#: sendlatermanager.cpp:190
+#, kde-format
+msgid "An error was found. Do you want to resend it?"
+msgstr "È stato trovato un errore. Vuoi rispedire il messaggio?"
+
+#: sendlatermanager.cpp:190
+#, kde-format
+msgid "Error found"
+msgstr "Rilevato un errore"
+
+#. i18n: ectx: property (text), widget (QPushButton, modifyItem)
+#: ui/sendlaterconfigurewidget.ui:31
+#, kde-format
+msgid "Modify..."
+msgstr "Modifica..."
+
+#. i18n: ectx: property (text), widget (QPushButton, removeItem)
+#: ui/sendlaterconfigurewidget.ui:38
+#, kde-format
+msgid "Remove"
+msgstr "Rimuovi"
+
+#~ msgctxt "@title:window"
+#~ msgid "Send Later"
+#~ msgstr "Spedisci più tardi"
+
+#~ msgid "Send Later"
+#~ msgstr "Spedisci più tardi"
+
+#~ msgid "Delay"
+#~ msgstr "Ritardo"
+
+#~ msgid "Days"
+#~ msgstr "Giorni"
+
+#~ msgid "Weeks"
+#~ msgstr "Settimane"
+
+#~ msgid "Months"
+#~ msgstr "Mesi"
+
+#~ msgid "Years"
+#~ msgstr "Anni"
+
+#~ msgid "You cannot select a date prior to the current date."
+#~ msgstr "Non puoi selezionare una data precedente alla data attuale."
+
+#~ msgid "Send at:"
+#~ msgstr "Invia alle:"
+
+#~ msgid "Repeat every:"
+#~ msgstr "Ripeti ogni:"
+
+#, fuzzy
+#~| msgid "Send Later"
+#~ msgid "SendLater"
+#~ msgstr "Spedisci più tardi"
+
+#~ msgid "Put in outbox"
+#~ msgstr "Metti nella posta in uscita"
+
+#, fuzzy
+#~| msgid "Recursive"
+#~ msgid "Recurrence"
+#~ msgstr "Ricorsivo"
+
+#~ msgid "Each:"
+#~ msgstr "Ogni:"
+
+#~ msgid "30 minutes later"
+#~ msgstr "trenta minuti dopo"
+
+#~ msgid "1 hour later"
+#~ msgstr "un'ora dopo"
+
+#, fuzzy
+#~| msgid "2 hour later"
+#~ msgid "2 hours later"
+#~ msgstr "due ore dopo"
+
+#~ msgid "Send Now"
+#~ msgstr "Spedisci ora"
+
+#~ msgid "Recursive"
+#~ msgstr "Ricorsivo"
+
+#~ msgid "Date"
+#~ msgstr "Data"

@@ -1,0 +1,544 @@
+<chapter id="troubleshooting">
+
+<chapterinfo>
+<authorgroup>
+<author>
+<personname
+><firstname
+>Aquest capítol ha estat convertit des de la pàgina <ulink url="https://userbase.kde.org/KMail/FAQs_Hints_and_Tips/ca"
+>KMail/Preguntes més freqüents (PMF) consells i trucs</ulink
+>.</firstname
+> <surname
+></surname
+> </personname>
+      </author>
+&traductor.Antoni.Bella; 
+      </authorgroup>
+<date
+>28 de juliol de 2012</date>
+      <releaseinfo
+>&kde; SC 4.9</releaseinfo>
+</chapterinfo>
+
+<title
+>Solució de problemes al &kmail;</title>
+
+<sect1 id="kmail2-doesnt-send-mail"
+><title
+>Per què el &kmail; no envia un correu</title>
+<para
+>Alguns usuaris es troben que el correu no surt, i sembla que &SMTP; no està present, tot i que la pàgina <guimenuitem
+>Arranjament</guimenuitem
+> sembla correcta. S'ha informat que es mira de curar obrint <application
+>akonadiconsole</application
+> i afegint Agent distribuïdor de correu. </para>
+<para
+>Si l'ordinador ha passat sobtadament al mode de suspensió (&pex;, per un tall d'energia) de vegades els correus electrònics senzillament es queden a la safata de sortida sense enviar, però no hi ha missatge d'error generat. Això es pot deure al fet que l'Agent distribuïdor de correu està establert a <quote
+>fora de línia</quote
+> en el fitxer de configuració durant la suspensió i no es canvia a causa de la caiguda. Editeu el següent fitxer: </para>
+<para
+><filename
+>~/.config/akonadi/agent_config_akonadi_maildispatcher_agent</filename>
+</para>
+<para
+>i canvieu </para>
+<para
+><screen
+>[Agent]
+Online=false</screen>
+</para>
+<para
+>a </para>
+<para
+><screen
+>[Agent]
+Online=true</screen>
+</para>
+</sect1>
+<sect1 id="clean-start-after-a-failed-migration"
+><title
+>Netejar després d'una migració fallada</title>
+<para
+>En cas d'una migració des del &kmail; 1 al &kmail; 2 que falla o si després teniu problemes estranys, podeu intentar fer una importació de neteja de les vostres dades, en comptes de migrar la configuració existent. Adverteixo, això requereix una configuració més manual, l'única manera d'estar segur és si creeu els comptes del &kmail; una altra vegada, i pot generar una gran quantitat de trànsit a la xarxa per als recursos &IMAP;. </para>
+<orderedlist>
+<listitem
+><para
+>Atureu l'Akonadi i les aplicacions relacionades</para>
+<para
+>Sortiu del &kmail;/&kontact;/&korganizer;, i executeu la següent ordre: </para>
+<para
+><userinput
+><command
+>akonadictl stop</command
+></userinput>
+</para>
+<para
+>Assegureu-vos que no s'executen processos de l'<application
+>Akonadi</application
+> o <application
+>MySQL</application
+>: </para>
+<para
+><userinput
+><command
+>ps ux | grep mysql</command
+></userinput>
+</para>
+<para
+><userinput
+><command
+>ps ux | grep akonadi</command
+></userinput>
+</para>
+<para
+>No s'ha de mostrar cap altra cosa a part del procés <application
+>grep</application
+> mateix. </para>
+</listitem>
+<listitem
+><para
+>Elimineu la base de dades antiga i la configuració de l'Akonadi</para>
+<para
+>Suprimiu les següents carpetes </para>
+<itemizedlist>
+  <listitem>
+    <para>
+      <filename role="directory"
+>~/.local/share/akonadi</filename>
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      <filename role="directory"
+>~/.config/akonadi</filename>
+    </para>
+  </listitem>
+</itemizedlist>
+<para
+>Suprimiu també els fitxers que comencin amb <emphasis
+>akonadi</emphasis
+> des de <filename role="directory"
+>~/.kde4/share/config</filename
+> </para>
+</listitem>
+<listitem>
+<para
+>Reinicieu el servidor d'Akonadi </para>
+<para
+><userinput
+><command
+>akonadictl start</command
+></userinput>
+</para>
+</listitem>
+<listitem>
+<para
+>Afegiu de nou els comptes </para>
+<para
+>Ara és hora de tornar a afegir el vostre compte. Per a fer-ho podeu utilitzar el &kmail; (&kontact;), o bé podeu utilitzar l'eina <application
+>akonadiconsole</application
+>. </para>
+<para
+>En el &kmail;: <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guisubmenu
+>Configura el &kmail;...</guisubmenu
+><guimenuitem
+>Comptes</guimenuitem
+></menuchoice
+> i utilitzeu <guilabel
+>Afegeix</guilabel
+>. </para>
+<para
+>Si utilitzeu &IMAP;, afegiu un <guimenuitem
+>Servidor de correu &IMAP;</guimenuitem
+> nou. Si voleu el mode desconnectat (de manera que podreu llegir el correu fora de línia), habiliteu-lo a la pestanya <guilabel
+>Avançat</guilabel
+>. Assegureu-vos de comprovar que esteu subscrit a totes les vostres carpetes importants. </para>
+<para
+>Possiblement ja esteu veient un recurs de <guilabel
+>Carpeta local</guilabel
+>. Aquest apunta a una carpeta per al directori de correu local. Podeu modificar aquest punt a les vostres carpetes maildir existents o podeu afegir un nou recurs per al correu local. </para>
+<para
+>En afegir un recurs maildir, podeu escollir entre <guilabel
+>Carpeta de correu del &kmail;</guilabel
+> o <guilabel
+>Maildir</guilabel
+>. A menys que es tingui una carpeta que contingui <emphasis
+>ambdues</emphasis
+> opcions, carpetes per als directoris de correu i fitxers mbox, en aquest cas haureu d'escollir <guilabel
+>Maildir</guilabel
+>. Per als fitxers mbox independents, com a <filename role="directory"
+>/var/spool/mail</filename
+>, podeu configurar una nova capeta <emphasis
+>MBox</emphasis
+>. </para>
+<para
+>Afegiu els comptes POP3 com segueix. Si teniu configurades múltiples carpetes locals, a la pestanya <guilabel
+>Avançat</guilabel
+>, escolliu la carpeta de destinació on es posaran els missatges de correu electrònic que descarregueu. </para>
+<para
+>Per a tots els comptes, configureu l'interval de comprovació del correu. Per a les carpetes locals inhabiliteu-lo i també <guilabel
+>Inclou en la comprovació manual del correu</guilabel
+> en les <guilabel
+>Opcions de recuperació</guilabel
+>. </para>
+<para
+>Afegiu els comptes (SMTP) per a enviar el correu. </para>
+</listitem>
+<listitem>
+<para
+>Arregleu els vostres filtres, identitats i carpetes preferides </para>
+<para
+>Si filtreu al costat del client (comú amb el correu POP3), aneu a <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guimenuitem
+>Configura els filtres</guimenuitem
+></menuchoice
+> i fixeu la carpeta de destinació per als filtres, que molt probablement és errònia. En cas contrari el correu acabarà en carpetes que no espereu. </para>
+<para
+>El filtre contra el correu brossa (si més no en la versió 4.7.3 i anteriors) no funciona com s'espera doncs la regla que crea l'assistent no envia el correu brossa a la carpeta que heu definit. </para>
+<para
+>La solució és canviar <quote
+>spam</quote
+> i el <quote
+>spam unsure</quote
+> (si el filtre de correu brossa que utilitzeu ho admet) als camps d'estat a la capçalera <literal
+>X-Spam-Status</literal
+> per a veure <guimenuitem
+>A qualsevol lloc de les capçaleres</guimenuitem
+> de X-<replaceable
+>el_vostre_filtre_spam</replaceable
+>-Classification: <quote
+>SPAM o unsure</quote
+>. Mireu els filtres que crea l'assistent i copieu la part <quote
+>contains</quote
+>. Exemple de <application
+>Spambayes</application
+>: <quote
+>X-SpamBayes-Classification: spam</quote
+> i <quote
+>X-Spambayes-Classification: unsure</quote
+>. </para>
+<para
+>Caldrà que verifiqueu la configuració de la identitat i establir les carpetes enviats, esborranys i plantilles perquè apuntin a les carpetes correctes. Per a fer-ho aneu a <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guisubmenu
+>Configura el &kmail;...</guisubmenu
+><guimenuitem
+>Identitats</guimenuitem
+></menuchoice
+>, modifiqueu la identitat, aneu a la pestanya <guilabel
+>Avançat</guilabel
+> i modifiqueu les carpetes mencionades. </para>
+<para
+>Comproveu també que abans heu escollit les vostres <guilabel
+>Carpetes preferides</guilabel
+>. </para>
+</listitem>
+<listitem>
+<para
+>Inicieu una comprovació del correu </para>
+<para
+>Inicieu una comprovació del correu per als vostres comptes. Suggereixo fer-ho per a cada compte. </para>
+<para
+>Primer comproveu l'&IMAP;, si en teniu un. </para>
+<para
+>A continuació cal comprovar (importar) el vostre correu electrònic local. Una solució és fer una única comprovació <menuchoice
+><guimenu
+>Fitxer</guimenu
+><guimenuitem
+>Comprova el correu a</guimenuitem
+></menuchoice
+> i seleccioneu el compte local. L'altra és fer clic sobre les carpetes una per una, el qual ha d'iniciar la comprovació per a aquesta carpeta (o bé feu clic dret sobre el nom de la carpeta i seleccioneu <guilabel
+>Actualitza la carpeta</guilabel
+>). </para>
+<para
+>La importació inicial pot ser lenta i podria utilitzar una gran quantitat de memòria, especialment si es tenen carpetes amb una gran quantitat de correu. En aquest cas, comprovar-ho per carpeta és el preferit. Si la comprovació (completa o per carpeta) finalitza i l'ús de la memòria segueixi sent alt, podeu reiniciar el servidor Akonadi -com hem vist- o senzillament l'agent per al directori de correu, si utilitzeu <varname
+>akonadiconsole</varname
+>. No us capfiqueu, aquest ús alt de memòria <emphasis
+>sols</emphasis
+> és per a la importació inicial. </para>
+<para
+>Inicieu una comprovació de correu per als recursos POP3. </para>
+</listitem>
+</orderedlist>
+<para
+>Esperem que després d'aquests passos, tindreu una experiència amb el &kmail; molt més agradable. </para>
+</sect1>
+
+<sect1 id="local-folders-is-added-over-and-over"
+><title
+>Les carpetes locals s'han afegit diverses vegades</title>
+<para
+>En alguns casos podeu acabar amb un compte de directori de correu que apunta a una ubicació específica (com <filename
+>$HOME/Mail</filename
+>), però veureu la mateixa carpeta <guilabel
+>Carpetes locals</guilabel
+> a la llista de carpetes amb les subcarpetes entrada, sortida, enviats, paperera, &etc; i el &kmail; no deixarà d'afegir-hi missatges, especialment els missatges enviats. </para>
+<para
+>El problema és que algunes carpetes es marquen com a carpetes especials (carpetes del sistema) i si no ho estan, el &kmail; no pot operar correctament. Aquesta és la raó per la qual les torna a crear. </para>
+<para
+>En aquest punt, no hi ha una manera fàcil de canviar aquesta interfície d'usuari per a tots els tipus de carpetes especials. Aquí hi ha una manera de fer-ho: </para>
+<orderedlist>
+<listitem
+><para
+>Les carpetes <emphasis
+>enviats, esborranys i plantilles</emphasis
+> són configurables per a cada identitat. Aneu a <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guisubmenu
+>Configura el &kmail;...</guisubmenu
+><guimenuitem
+>Identitats</guimenuitem
+></menuchoice
+>, seleccioneu la identitat, feu clic a <guilabel
+>Modifica</guilabel
+>, aneu a la pestanya <guilabel
+>Avançat</guilabel
+> i arrangeu les carpetes per a que apuntin al lloc correcte.</para
+></listitem>
+<listitem
+><para
+>La safata d'<emphasis
+>entrada</emphasis
+> predeterminada és configurable per a cada compte POP3. Aneu a <menuchoice
+><guimenu
+>Arranjament</guimenu
+><guisubmenu
+>Configura el &kmail;...</guisubmenu
+><guimenuitem
+>Compte</guimenuitem
+></menuchoice
+>, seleccioneu el vostre compte POP3, feu clic a <guilabel
+>Modifica</guilabel
+>, aneu a la pestanya <guilabel
+>Avançat</guilabel
+> i establiu la <guilabel
+>Carpeta de destinació</guilabel
+>.</para
+></listitem>
+<listitem
+><para
+>Per als comptes IMAP podeu configurar la carpeta <emphasis
+>paperera</emphasis
+>. Com s'indicava abans. El nom a la configuració és <emphasis
+>Carpeta de la paperera</emphasis
+>.</para
+></listitem>
+<listitem
+><para
+>La part més problemàtica és la safata de <emphasis
+>sortida</emphasis
+>. Primer, localitzeu <filename
+>specialmailcollectionsrc</filename
+> en el vostre directori de configuració del &kde; (<filename
+>$HOME/.kde4/share/config</filename
+> o similar). Conté quelcom a això:</para
+></listitem>
+</orderedlist>
+<para
+><userinput
+>[SpecialCollections] DefaultResourceId=akonadi_maildir_resource_0</userinput>
+</para>
+<para
+>Ara inicieu <application
+>akonadiconsole</application
+>, a la pestanya <guilabel
+>Agents</guilabel
+> localitzeu el vostre compte local per a la vostra carpeta de <emphasis
+>Sortida</emphasis
+>, feu-hi clic i cal tenir en compte l'identificador que apareix a la part inferior (<replaceable
+>akonadi_maildir_resource_XXX</replaceable
+> o similar). Afegiu aquest identificador al <filename
+>specialmailcollectionsrc</filename
+> anterior, substituint l'existent. </para>
+<para
+>Després reinicieu <application
+>akonadi</application
+> (ho podeu fer des de l'<application
+>akonadiconsole</application
+>, <menuchoice
+><guimenu
+>Servidor</guimenu
+><guimenuitem
+>Torna a iniciar el servidor</guimenuitem
+></menuchoice
+> o des de la línia d'ordres amb: </para>
+<para
+><userinput
+>akonadictl restart</userinput>
+</para>
+<para
+>Ara elimineu les <guilabel
+>Carpetes locals</guilabel
+> que no utilitzareu més. </para>
+<para
+>Si segueix apareixent i l'<guilabel
+>Agent distribuïdor de correu</guilabel
+> encara falla, caldrà fer alguna cosa més en <application
+>akonadiconsole</application
+>. Aneu a la pestanya <guilabel
+>Navegador</guilabel
+>, trobeu la safata de sortida que <emphasis
+>voleu</emphasis
+> utilitzar, feu clic dret sobre seu, seleccioneu <guilabel
+>Propietats de la carpeta</guilabel
+>, pestanya <guilabel
+>Atributs</guilabel
+>, escriviu <userinput
+>SpecialCollectionAttribute</userinput
+> després feu clic a <guilabel
+>Afegeix</guilabel
+>, feu doble clic sobre el <guilabel
+>Valor</guilabel
+> a prop de <guilabel
+>SpecialCollectionAttribute</guilabel
+> i introduïu <userinput
+>outbox</userinput
+>. Afegiu també un altre atribut, el nom de l'atribut haurà de ser <guilabel
+>ENTITYDISPLAY</guilabel
+> i el valor <userinput
+>("outbox" "mail-folder-outbox" "" ())</userinput
+> (només copieu i enganxeu des d'aquí). Reinicieu <application
+>akonadi</application
+> i ara hauríeu de ser capaç d'eliminar completament la carpeta local que no sigui necessària del compte. </para>
+</sect1>
+
+<sect1 id="you-get-the-error-unable-to-fetch-item-from-backend-when-entering-imap-folder"
+><title
+>Obteniu l'error <quote
+>No s'ha pogut obtenir l'element des del dorsal en entrar a la carpeta IMAP</quote
+></title>
+<para
+>Hi ha un nombre de possibles raons per a això i és quelcom que l'equip del &kmail; espera abordar en el temps. Mentrestant, hi ha algunes solucions: </para>
+<variablelist>
+  <varlistentry>
+    <term
+>Solució alternativa 1</term>
+    <listitem>
+      <itemizedlist>
+        <listitem
+><para
+>editeu <filename
+>~/.local/share/akonadi/mysql.conf</filename
+></para
+></listitem>
+        <listitem
+><para
+>Sota la secció <guilabel
+>[mysql]</guilabel
+>, afegiu: <userinput
+>binlog_format=row</userinput
+></para
+></listitem>
+      </itemizedlist>
+      <para
+>Si això no funciona, intenteu la solució alternativa 2 (a continuació). </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term
+>Solució alternativa 2</term>
+    <listitem>
+      <para
+>Això és sobretot qüestió de reiniciar de manera que el &kmail; pugui obtenir aquests elements molestos... Alguns passos possibles:</para>
+      <para
+>Utilitzeu <keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> o el &konsole; per a escriure: <userinput
+><command
+>kquitapp kmail</command
+></userinput
+> i espereu un minut, després <userinput
+><command
+>akonadictl stop</command
+></userinput
+>, espereu un minut i escriviu <userinput
+><command
+>akonadictl start</command
+></userinput
+>, espereu un minut i escriviu <userinput
+><command
+>kmail</command
+></userinput
+>. Això aturarà el &kmail; (tancant <emphasis
+>totes</emphasis
+> les finestres), aturarà el dorsal del &kmail;, iniciarà el dorsal del &kmail; i iniciarà el &kmail;. Tenir una connexió a Internet augmenta les possibilitats d'èxit. De vegades, també podeu senzillament fer <userinput
+><command
+>kquitapp kmail</command
+></userinput
+>, espereu un minut i inicieu el &kmail; de nou. Sovint, semblen ser necessaris uns quants reinicis. No està clar quina és la raó d'això, però en connexions de xarxa dolentes és més probable que passi. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+<para
+>Vegeu també el següent article per a saber com pot ser-vos d'ajuda <application
+>akonadiconsole</application
+>. </para>
+</sect1>
+
+<sect1 id="your-mails-are-not-being-sent-without-error-messages"
+><title
+>Els missatges no s'envien, sense missatges d'error</title>
+<para
+>Si el &kmail; no envia el correu sense dir res, l'<quote
+>agent</quote
+> responsable d'enviar els missatges pot estar encallat. Per descomptat, cal que us assegureu que teniu una connectivitat a xarxa adequada per a enviar el correu! </para>
+<para
+>Per a solucionar això, pot ajudar avortar l'acció actual i reiniciar. Primer, sortiu del &kmail; utilitzant el &krunner; (<keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+>) o el &konsole; i escriviu: <userinput
+><command
+>kquitapp kmail</command
+></userinput
+>. Cal tenir en compte que el normal <keycombo
+>&Alt;<keycap
+>F4</keycap
+></keycombo
+> o <menuchoice
+><guimenu
+>Fitxer</guimenu
+><guimenuitem
+>Surt</guimenuitem
+></menuchoice
+> <emphasis
+>no</emphasis
+> farà el truc! Espereu un minut, i després inicieu de nou el &kmail;. Ara inicieu <application
+>akonadiconsole</application
+> utilitzant el &krunner; (<keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+>) o el &konsole;. Aneu a l'<guilabel
+>Agent distribuïdor de correu</guilabel
+>, feu-hi clic dret i avorteu l'acció actual. El més probable és que obteniu alguns missatges d'error. Torneu al &kmail; i escolliu <menuchoice
+><guimenu
+>Fitxer</guimenu
+><guimenuitem
+>Envia la cua de missatges</guimenuitem
+></menuchoice
+>. Ara, podria funcionar. Si no és així, en comptes d'interrompre l'acció actual, intenteu alternar l'estat fora de línia/en línia de l'<guilabel
+>Agent distribuïdor de correu</guilabel
+> o torneu a iniciar les coses com s'esmenta en la solució alternativa 2 del problema anterior a aquest. </para>
+<para
+><note
+><para
+>L'<application
+>akonadiconsole</application
+> pot ser molt útil per a un nombre de situacions, ja que mostra tots els <quote
+>agents</quote
+>, els components separats de dorsal del &kmail;. Els podeu aturar i iniciar, posar-los en mode fora de línia, avortar les accions en curs, &etc; Pot ser molt útil quan les coses s'encallen.</para
+></note>
+</para>
+</sect1>
+
+</chapter>

@@ -1,0 +1,526 @@
+<chapter id="troubleshooting">
+
+<chapterinfo>
+<authorgroup>
+<author>
+<personname
+><firstname
+>Цю главу створено на основі сторінки <ulink url="https://userbase.kde.org/Special:MyLanguage/KMail/FAQs_Hints_and_Tips"
+>KMail/Підказки і настанови</ulink
+> UserBase KDE.</firstname
+> <surname
+></surname
+> </personname>
+      </author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+      </authorgroup>
+<date
+>28 липня 2012 року</date>
+      <releaseinfo
+>&kde; SC 4.9</releaseinfo>
+</chapterinfo>
+
+<title
+>Усування вад у &kmail;</title>
+
+<sect1 id="kmail2-doesnt-send-mail"
+><title
+>KMail не надсилає пошту</title>
+<para
+>Деякі з користувачів повідомляють про те, що вихідні повідомлення не надсилаються через нібито не вказані параметри &SMTP;, хоча значення на сторінці <guimenuitem
+>Параметри</guimenuitem
+> вказано належним чином. Повідомляється, що проблему можна усунути відкриттям <application
+>akonadiconsole</application
+> з додаванням агента розподілу пошти. </para>
+<para
+>Якщо комп’ютер було раптово вимкнено під час роботи у режимі сну (наприклад через вимикання живлення), іноді поштові повідомлення просто залишаються у теці «Вихідні» і не надсилаються, але програма також і не повідомляє про жодні помилки. Причиною може бути те, що агент розподілу пошти перемкнувся у режим автономної роботи під час присипляння і не повернувся до звичайного режиму через аварійне вимикання живлення. Відкрийте для редагування такий файл: </para>
+<para
+><filename
+>~/.config/akonadi/agent_config_akonadi_maildispatcher_agent</filename>
+</para>
+<para
+>і змініть </para>
+<para
+><screen
+>[Agent]
+Online=false</screen>
+</para>
+<para
+>на </para>
+<para
+><screen
+>[Agent]
+Online=true</screen>
+</para>
+</sect1>
+<sect1 id="clean-start-after-a-failed-migration"
+><title
+>Запуск після невдалого перенесення даних</title>
+<para
+>Якщо вам не вдасться перенести ваші налаштування з &kmail; 1 до &kmail; 2 або після такого перенесення виникають дивні проблеми, ви можете спробувати повторно імпортувати ваші дані замість перенесення поточних налаштувань. Зауважте, що для цього доведеться виконати певні дії вручну, отже ви можете скористатися цим способом, якщо точно знаєте параметри ваших облікових записів &kmail; і не маєте обмежень на об’єм обміну даними з ресурсами &IMAP;. </para>
+<orderedlist>
+<listitem
+><para
+>Завершіть роботу Akonadi і всіх пов’язаних з ним програм</para>
+<para
+>вийдіть з &kmail;/&kontact;/&korganizer; і віддайте таку команду: </para>
+<para
+><userinput
+><command
+>akonadictl stop</command
+></userinput>
+</para>
+<para
+>Переконайтеся, що не запущено жодних процесів <application
+>Akonadi</application
+> або <application
+>MySQL</application
+>: </para>
+<para
+><userinput
+><command
+>ps ux | grep mysql</command
+></userinput>
+</para>
+<para
+><userinput
+><command
+>ps ux | grep akonadi</command
+></userinput>
+</para>
+<para
+>У виведених даних не має бути нічого, окрім назви самого процесу <application
+>grep</application
+>. </para>
+</listitem>
+<listitem
+><para
+>Вилучіть стару базу даних і файл налаштувань Akonadi</para>
+<para
+>Вилучіть такі теки: </para>
+<itemizedlist>
+  <listitem>
+    <para>
+      <filename role="directory"
+>~/.local/share/akonadi</filename>
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      <filename role="directory"
+>~/.config/akonadi</filename>
+    </para>
+  </listitem>
+</itemizedlist>
+<para
+>Вилучіть також файли, назви яких починаються з <emphasis
+>akonadi</emphasis
+> з <filename role="directory"
+>~/.kde4/share/config</filename
+> </para>
+</listitem>
+<listitem>
+<para
+>Перезапустіть сервер Akonadi </para>
+<para
+><userinput
+><command
+>akonadictl start</command
+></userinput>
+</para>
+</listitem>
+<listitem>
+<para
+>Повторно створіть облікові записи </para>
+<para
+>Тепер додайте знову ваш обліковий запис. Ви можете скористатися для цього &kmail; (&kontact;) або програмою <application
+>akonadiconsole</application
+>. </para>
+<para
+>У &kmail;: <menuchoice
+><guimenu
+>Параметри</guimenu
+><guisubmenu
+>Налаштувати KMail</guisubmenu
+><guimenuitem
+>Облікові записи</guimenuitem
+></menuchoice
+>, натисніть кнопку <guilabel
+>Додати</guilabel
+>. </para>
+<para
+>Якщо ви користуєтеся &IMAP;, додайте новий <guimenuitem
+>сервер електронної пошти &IMAP;</guimenuitem
+>. Якщо ви бажаєте налаштувати від’єднаний режим (щоб можна було читати повідомлення у автономному режимі), позначте відповідний пункт на вкладці <guilabel
+>Додатково</guilabel
+>. Переконайтеся, що ви підписалися на всі важливі для вас теки. </para>
+<para
+>Ймовірно, ви вже помітили пункт ресурсу <guilabel
+>Локальна тека</guilabel
+>. Цей пункт вказує на локальну теку поштових повідомлень. Ви можете змінити його так, щоб він вказував на вже створені вами теки поштових повідомлень, або додати новий ресурс для локального зберігання повідомлень. </para>
+<para
+>Під час додавання нового ресурсу поштової теки ви можете вибрати один з варіантів: <guilabel
+>Поштова тека &kmail;</guilabel
+> або <guilabel
+>Maildir</guilabel
+>. Якщо у вашій теці не містяться <emphasis
+>одразу</emphasis
+> теки maildir та файли mbox, вам слід вибрати варіант <guilabel
+>Maildir</guilabel
+>. Якщо ваше сховище пошти є набором окремих файлів mbox, наприклад у <filename role="directory"
+>/var/spool/mail</filename
+>, ви можете налаштувати нову теку <emphasis
+>MBox</emphasis
+>. </para>
+<para
+>Додайте також облікові записи POP3. Якщо у вас налаштовано декілька локальних тек, виберіть на вкладці <guilabel
+>Додатково</guilabel
+> теку призначення, в якій слід зберігати нові отримані з сервера повідомлення. </para>
+<para
+>Для всіх облікових записів налаштуйте інтервал перевірки пошти. Для локальних тек вимкніть періодичні перевірки, а також зніміть позначку з пункту <guilabel
+>Включити до перевірки пошти вручну</guilabel
+> у <guilabel
+>Параметрах отримання</guilabel
+>. </para>
+<para
+>Додайте дані серверів надсилання пошти (SMTP). </para>
+</listitem>
+<listitem>
+<para
+>Виправте ваші фільтри, ідентифікатори і теки улюблених записів </para>
+<para
+>Якщо у вашій системі налаштовано фільтрування на боці клієнта (типово для поштових скриньок POP3), виберіть пункт меню <menuchoice
+><guimenu
+>Параметри</guimenu
+><guimenuitem
+>Налаштувати фільтри</guimenuitem
+></menuchoice
+> і виправте дані теки призначення для фільтрів, оскільки, ймовірно, ці дані є помилковими. Якщо ви цього не зробите, пошта зберігатиметься зовсім не до тих тек, до яких би вам хотілося. </para>
+<para
+>Фільтрування небажаної кореспонденції (принаймні у версії 4.7.3 і попередніх) не працює належним чином: правило, яке створюється майстром не надсилає небажану кореспонденцію до вказаної вами теки. </para>
+<para
+>Уникнути цієї проблеми можна зміною фільтрувань «spam» (небажана кореспонденція) та «spam unsure» (можливо небажана кореспонденція), якщо таке передбачено використаним вами засобом фільтрування, з пошуку у Status-fields у заголовку X-Spam-Status на <guimenuitem
+>Будь-де у заголовках</guimenuitem
+> для X-<replaceable
+>ваш_фільтр</replaceable
+>-Classification: SPAM або unsure. Погляньте на створені майстром фільтри і скопіюйте частину "contains". Приклад для Spambayes: X-Spambayes-Classification: spam and X-Spambayes-Classification: unsure </para>
+<para
+>Крім того, вам слід перевірити параметри профілю і зробити так, щоб вони визначали належні теки надісланої пошти, чернеток і шаблонів. Для цього скористайтеся пунктом меню <menuchoice
+><guimenu
+>Параметри</guimenu
+><guisubmenu
+>Налаштувати KMail</guisubmenu
+><guimenuitem
+>Профілі</guimenuitem
+></menuchoice
+>, внесіть зміни до профілю, перейдіть на вкладку <guilabel
+>Додатково</guilabel
+> і скоригуйте адреси згаданих вище тек. </para>
+<para
+>Також переконайтеся, що ваші теки улюблених записів є тими самими, які ви вибирали раніше. </para>
+</listitem>
+<listitem>
+<para
+>Запустіть отримання пошти </para>
+<para
+>Запустіть отримання пошти з ваших облікових записів. Варто зробити це для кожного облікового запису окремо. </para>
+<para
+>Спочатку зробіть це для поштових скриньок &IMAP;, якщо у вас є такі. </para>
+<para
+>Далі, слід отримати (імпортувати) ваші локальні поштові повідомлення. Одним зі способів такого отримання є повна перевірка за допомогою пункту меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Перевірити пошту</guimenuitem
+></menuchoice
+> з вибором локального облікового запису. Іншим способом є натискання пункту однієї з тек, у відповідь на яке буде розпочато перевірку пошти у цій теці (ви також можете клацнути правою кнопкою миші на пункті теки і вибрати у контекстному меню пункт <guilabel
+>Оновити теку</guilabel
+>). </para>
+<para
+>Початковий сеанс імпортування може бути доволі тривалим і вибагливим до оперативної пам’яті, особливо якщо у вашій поштовій скриньці дуже багато повідомлень. У такому разі слід надати перевагу отриманню пошти до кожної з тек окремо. Якщо після завершення отримання даних (повністю або для окремої теки) пам’ять не буде звільнено, ви можете перезапустити сервер Akonadi у спосіб наведений вище або просто перезапустити допоміжну програму роботи з поштовим каталогом, якщо ви користуєтеся <varname
+>akonadiconsole</varname
+>. Не переймайтеся: високе споживання пам’яті характерне <emphasis
+>лише</emphasis
+> для початкового імпортування даних. </para>
+<para
+>Запустіть отримання пошти для ресурсів POP3. </para>
+</listitem>
+</orderedlist>
+<para
+>Сподіваємося, після виконання всіх цих настанов вам стане зручніше працювати у новому &kmail;. </para>
+</sect1>
+
+<sect1 id="local-folders-is-added-over-and-over"
+><title
+>Не вдається вилучити локальну теку</title>
+<para
+>Іноді через певні помилки може статися так, що у вас буде певний обліковий запис пошти, дані якого зберігатимуться у певній теці (наприклад <filename
+>$HOME/Mail</filename
+>), але у вікні програми у списку тек все ще буде тека <guilabel
+>Локальні теки</guilabel
+> з підтеками Вихідні/Смітник/Чернетки/тощо, і &kmail; продовжуватиме зберігати у цих теках повідомлення, особливо надіслані повідомлення. </para>
+<para
+>Проблема полягає у тому, що певні теки позначаються як спеціальні (системні). Якщо у вашій системі немає таких тек, &kmail; не зможе працювати належним чином. Ось чому програма намагається раз за разом створити відповідну теку. </para>
+<para
+>У поточній версії програми не передбачено простого способу розв’язання цієї проблеми за допомогою графічного інтерфейсу для всіх типів спеціальних тек. Але проблему все ж можна розв’язати так: </para>
+<orderedlist>
+<listitem
+><para
+>Теку <emphasis
+>Надіслана пошта, чернетки і шаблони</emphasis
+> можна налаштувати для кожного з профілів окремо. Скористайтеся пунктом меню <menuchoice
+><guimenu
+>Параметри</guimenu
+><guisubmenu
+>Налаштувати KMail</guisubmenu
+><guimenuitem
+>Профілі</guimenuitem
+></menuchoice
+>, виберіть ваш профіль, натисніть кнопку <guilabel
+>Змінити</guilabel
+> і визначте для відповідних тек правильне розташування у системі.</para
+></listitem>
+<listitem
+><para
+>Теку <emphasis
+>Вхідні</emphasis
+> можна налаштувати окремо для кожного з облікових записів POP3. Для цього скористайтеся пунктом меню <menuchoice
+><guimenu
+>Параметри</guimenu
+><guisubmenu
+>Налаштувати KMail</guisubmenu
+><guimenuitem
+>Профілі</guimenuitem
+></menuchoice
+>, натисніть кнопку <guilabel
+>Змінити</guilabel
+>, перейдіть на вкладку <guilabel
+>Додатково</guilabel
+> і встановіть відповідну <guilabel
+>Теку призначення</guilabel
+>.</para
+></listitem>
+<listitem
+><para
+>Для облікових записів IMAP ви можете налаштувати теку <emphasis
+>Смітник</emphasis
+>. Пункт меню той самий, що і у попередніх випадках. Відповідний параметр має назву <emphasis
+>Тека смітника</emphasis
+>.</para
+></listitem>
+<listitem
+><para
+>Найбільш проблемною є тека <emphasis
+>Вихідні</emphasis
+>. Для початку, знайдіть файл <filename
+>specialmailcollectionsrc</filename
+> у каталозі налаштувань &kde; (<filename
+>$HOME/.kde4/share/config</filename
+> або подібному). У цьому файлі мають бути такі рядки:</para
+></listitem>
+</orderedlist>
+<para
+><userinput
+>[SpecialCollections]DefaultResourceId=akonadi_maildir_resource_0</userinput>
+</para>
+<para
+>Тепер запустіть <application
+>akonadiconsole</application
+>, на вкладці <guilabel
+>Агенти</guilabel
+> знайдіть ваш локальний обліковий запис, у якому має зберігатися тека <emphasis
+>Вихідні</emphasis
+>, натисніть цей пункт і запам’ятайте ідентифікатор, який буде показано у нижній частині вікна з даними (<replaceable
+>akonadi_maildir_resource_XXX</replaceable
+> або щось таке). Введіть цей ідентифікатор у відповідне місце файла <filename
+>specialmailcollectionsrc</filename
+>, замінивши поточне значення. </para>
+<para
+>Після цього перезапустіть <application
+>akonadi</application
+>. Зробити це можна за допомогою вікна програми <application
+>akonadiconsole</application
+>: <menuchoice
+><guimenu
+>Сервер</guimenu
+><guimenuitem
+>Перезапустити сервер</guimenuitem
+></menuchoice
+> або за допомогою командного рядка </para>
+<para
+><userinput
+>akonadictl restart</userinput>
+</para>
+<para
+>Тепер вилучіть пункти <guilabel
+>Локальні теки</guilabel
+>, які вам непотрібні. </para>
+<para
+>Якщо після цього пункт нікуди не зникне, а <guilabel
+>Агент розподілу пошти</guilabel
+> продовжуватиме завершувати роботу у аварійному режимі, вам слід зробити ще одну річ за допомогою <application
+>akonadiconsole</application
+>. Перейдіть на вкладку <guilabel
+>Browser</guilabel
+> (<guilabel
+>Навігація</guilabel
+>), знайдіть теку вихідних повідомлень, яку ви <emphasis
+>хочете</emphasis
+> використовувати, клацніть на її пункті правою кнопкою миші, виберіть пункт <guilabel
+>Folder Properties</guilabel
+>, перейдіть на вкладку <guilabel
+>Attributes</guilabel
+>, введіть <userinput
+>SpecialCollectionAttribute</userinput
+>, потім натисніть кнопку <guilabel
+>Add</guilabel
+>, двічі клацніть на пункті <guilabel
+>Value</guilabel
+> поряд з написом <guilabel
+>SpecialCollectionAttribute</guilabel
+> і введіть <userinput
+>outbox</userinput
+>. Додайте також інший атрибут з назвою <guilabel
+>ENTITYDISPLAY</guilabel
+> і значенням <userinput
+>("outbox" "mail-folder-outbox" "" ())</userinput
+> (просто скопіюйте цей рядок). Перезапустіть <application
+>akonadi</application
+> і вилучіть непотрібний обліковий запис локальної теки. </para>
+</sect1>
+
+<sect1 id="you-get-the-error-unable-to-fetch-item-from-backend-when-entering-imap-folder"
+><title
+>Програма повідомляє, що «Не вдалося отримати елемент з модуля» під час входу до теки IMAP</title>
+<para
+>Причин може бути декілька. Команда розробників &kmail; сподівається з часом усунути всі ці причини. Зараз же, можна скористатися одним з таких обхідних шляхів: </para>
+<variablelist>
+  <varlistentry>
+    <term
+>Обхідний шлях 1</term>
+    <listitem>
+      <itemizedlist>
+        <listitem
+><para
+>відкрийте для редагування файл <filename
+>~/.local/share/akonadi/mysql.conf</filename
+></para
+></listitem>
+        <listitem
+><para
+>У розділі <guilabel
+>[mysql]</guilabel
+> допишіть <userinput
+>binlog_format=row</userinput
+></para
+></listitem>
+      </itemizedlist>
+      <para
+>Якщо це не спрацює, скористайтеся обхідним шляхом 2 (наведено нижче). </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term
+>Обхідний шлях 2</term>
+    <listitem>
+      <para
+>Цей спосіб полягає у простому перезапуску програми, щоб &kmail; зміг отримати всі потрібні дані. Ось можливі кроки:</para>
+      <para
+>Скористайтеся комбінацією клавіш <keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> або &konsole; для введення команди <userinput
+><command
+>kquitapp kmail</command
+></userinput
+>, трохи зачекайте, введіть команду <userinput
+><command
+>akonadictl stop</command
+></userinput
+>, ще трохи зачекайте, введіть команду <userinput
+><command
+>akonadictl start</command
+></userinput
+>, зачекайте, і, нарешті введіть команду <userinput
+><command
+>kmail</command
+></userinput
+>. Таким чином, ви завершите роботу &kmail; (з закриттям усіх вікон), завершите роботу модуля обробки даних &kmail;, запустите модуль обробки даних &kmail;, запустите &kmail;. Працездатне інтернет-з’єднання значно підвищить ваші шанси на успіх. Іноді ви можете просто віддати команду <userinput
+><command
+>kquitapp kmail</command
+></userinput
+>, зачекати трохи і запустити &kmail; знову. Може виникнути потреба у декількох таких перезапусках. Точна причина не зовсім зрозуміла, але у разі проблем зі з’єднанням зростає ймовірність такого розвитку подій. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+<para
+>Додаткові дані щодо корисності <application
+>akonadiconsole</application
+> для усування вад наведено нижче. </para>
+</sect1>
+
+<sect1 id="your-mails-are-not-being-sent-without-error-messages"
+><title
+>Повідомлення не надсилаються без будь-яких повідомлень про помилки</title>
+<para
+>Якщо &kmail; не надсилає пошти без будь-яких повідомлень, причиною може бути зависання «агента», відповідального за роботу з повідомленнями. Звичайно ж, також слід переконатися, що з’єднання, яким надсилаються дані, може працювати у штатному режимі! </para>
+<para
+>Щоб впоратися з цією проблемою, варто перервати виконання поточної дії і перезапустити її. Спочатку завершіть роботу &kmail; за допомогою &krunner; (<keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+>) або &konsole; та введеної команди <userinput
+><command
+>kquitapp kmail</command
+></userinput
+>. Зауважте, що звичайна комбінація клавіш <keycombo
+>&Alt;<keycap
+>F4</keycap
+></keycombo
+> або використання пункту меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Вийти</guimenuitem
+></menuchoice
+> не дасть бажаних результатів! Трохи зачекайте і запустіть &kmail; знову. Тепер запустіть <application
+>akonadiconsole</application
+> за допомогою &krunner; (<keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+>) або &konsole;. Натисніть пункт <guilabel
+>Mail Dispatcher Agent</guilabel
+>, клацніть на ньому правою кнопкою миші і перервіть виконання поточної дії. У відповідь, ймовірно, буде показано декілька повідомлень про помилки. Поверніться до вікна &kmail; і скористайтеся пунктом меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Надіслати повідомлення з черги</guimenuitem
+></menuchoice
+>. Можливо, тепер все запрацює. Якщо цього не сталося, замість переривання поточної дії спробуйте перемкнути стан (автономний/у мережі) для <guilabel
+>Mail Dispatcher Agent</guilabel
+> або перезапустіть все у спосіб, описаний у обхідному шляху 2 попереднього розділу. </para>
+<para
+><note
+><para
+>akonadiconsole може бути доволі зручним інструментом у багатьох випадках, оскільки програма показує всі агенти, окремі компоненти модуля обробки даних &kmail;. Ви зможете зупиняти і розпочинати їхню роботу, переводити агенти у автономний режим, переривати виконання дій тощо. Це дуже корисний інструмент у аналізі незрозумілих ситуацій.</para
+></note>
+</para>
+</sect1>
+
+</chapter>

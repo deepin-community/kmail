@@ -1,0 +1,5 @@
+rm_conffile /etc/xdg/kmail.categories 4:20.04.1-2~
+rm_conffile /etc/xdg/kmail.renamecategories 4:20.04.1-2~
+rm_conffile /etc/xdg/ktnefapps.categories 4:20.04.1-2~
+rm_conffile /etc/xdg/ktnefapps.renamecategories 4:20.04.1-2~
+rm_conffile /etc/xdg/kdepim.categories 4:20.08.2-5~
